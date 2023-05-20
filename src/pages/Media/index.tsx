@@ -1,9 +1,9 @@
 import { Container } from './styles'
-export function Home() {
+export function Media() {
   return (
-    <Container>
+    <div>
       {' '}
       <h1> home</h1>
-    </Container>
+    </div>
   )
 }
