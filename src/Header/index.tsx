@@ -22,7 +22,9 @@ export function Header() {
           <span>Media</span>
         </NavButton>
       </NavBar>
-      <ContactButton>Contato</ContactButton>
+      <ContactButton>
+        <span>Contato</span>
+      </ContactButton>
     </Container>
   )
 }

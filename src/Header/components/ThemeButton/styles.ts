@@ -9,7 +9,7 @@ const moveRight = keyframes`
     transform: translateX(0);
   }
   100% {
-    transform: translateX(1.8rem);
+    transform: translateX(1.7rem);
   }
 `
 
@@ -31,14 +31,15 @@ export const SwitchButton = styled.button`
   background-color: ${(props) => props.theme['Secondary-Button']};
   transition: background-color 0s ease;
   width: auto;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
 `
 export const Ball = styled.div<BallProps>`
   background-color: white;
   padding: 1rem;
   border-radius: 50%;
   position: absolute;
-  top: 2.5rem;
-  left: 5.2rem;
+  top: 2.25rem;
+  left: 5.25rem;
   animation: ${({ move }) =>
     move
       ? css`
@@ -50,7 +51,7 @@ export const Ball = styled.div<BallProps>`
 `
 
 export const DissolveIcon = styled.label`
-  gap: 0.2rem;
+  gap: 0.3rem;
   display: flex;
 
   svg {

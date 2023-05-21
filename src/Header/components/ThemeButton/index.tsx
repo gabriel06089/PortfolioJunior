@@ -16,8 +16,8 @@ export const ThemeButton: React.FC = () => {
     <SwitchButton onClick={handleClick}>
       <DissolveIcon>
         <Ball move={move} />
-        <Moon size={24} />
-        <Sun size={24} />
+        <Moon size={24} weight="fill" />
+        <Sun size={24} weight="fill" />
       </DissolveIcon>
     </SwitchButton>
   )

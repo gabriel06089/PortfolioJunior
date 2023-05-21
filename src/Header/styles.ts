@@ -17,6 +17,7 @@ export const NavBar = styled.div`
   align-items: center;
   margin: 1rem;
 
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
   background-color: ${(props) => props.theme['Secondary-Button']};
   width: auto;
   padding: 4px 5px 4px 5px;
@@ -28,7 +29,7 @@ export const NavBar = styled.div`
 export const NavButton = styled.button`
   outline: none;
   border: none;
-  padding: 10px 10px 10px 10px;
+  padding: 6px 8px 6px 8px;
   background-color: ${(props) => props.theme['Secondary-Button']};
   cursor: pointer;
   border-radius: 100px;
@@ -55,4 +56,8 @@ export const ContactButton = styled.button`
   border: 3px solid transparent;
 
   padding: 0.5rem 0.8rem;
+  span {
+    font-weight: bold;
+    color: ${(props) => props.theme.Primary};
+  }
 `

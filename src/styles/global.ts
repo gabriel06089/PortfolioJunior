@@ -5,8 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.8s ease;
-    transition: color 0.25s ease;
+    
 }
 :focus{
    
@@ -16,7 +15,8 @@ body{
     color: ${(props) => props.theme.Primary};
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.9s ease;
-    transition: color 0.9s ease;
+    min-height: 100vh;
+    
 }
 
 body,input,textarea,button{
