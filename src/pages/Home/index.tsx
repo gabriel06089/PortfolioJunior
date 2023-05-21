@@ -35,77 +35,87 @@ import TypeScript from '../../assets/Typescript.png'
 import Styled from '../../assets/styled.png'
 import Next from '../../assets/NextJs.png'
 import Vite from '../../assets/Vite.svg'
+import GitHubCalendar from 'react-github-calendar'
+import MapLibreMap from './Components/Map'
+
 export function Home() {
   return (
-    <AngryGrid>
-      <DivGrid0>
-        <h1>Gabriel Alves</h1>
-        <span>Desenvolvedor front-end</span>
-        <p>
-          Olá! Sou o Gabriel e busco oportunidades em empresas onde possa
-          contribuir e evoluir como desenvolvedor.
-        </p>
-        <WorkButton>
-          <span>Veja meu trabalho</span>
-        </WorkButton>
-      </DivGrid0>
-      <DivGrid1></DivGrid1>
-      <DivGrid2>
-        <img src={Academia} alt="" />
-      </DivGrid2>
-      <DivGrid3>d</DivGrid3>
-      <DivGrid4>
-        <h1> Aprendizado</h1>
-        <LearningContainer>
-          <img src={Estacio} alt="" />
-          <span>Análise e Desenvolvimento de Sistemas</span>
-        </LearningContainer>
-        <p>COMPLETADO</p>
-        <Line />
-        <LearningContainer>
-          <img src={Discover} alt="" />
-          <span>Rota: Discover Rocketseat</span>
-        </LearningContainer>
-        <LogoContainers>
-          <img src={Html} alt="" />
-          <img src={Css} alt="" />
-          <img src={JavaScript} alt="" />
-        </LogoContainers>
-        <p>COMPLETADO</p>
-        <Line />
-        <LearningContainer>
-          <img src={Ignite} alt="" />
-          <span>Rota: Ignite Rocketseat</span>
-        </LearningContainer>
-        <LogoContainers>
-          <img src={ReactJs} alt="" />
-          <img src={ReactNative} alt="" />
-          <img src={NodeJs} alt="" />
-        </LogoContainers>
-        <p>COMPLETADO</p>
-        <Line />
-        <LearningContainer>
-          <img src={ReactJs} alt="" />
-          <span>Trilha: ReactJs Rocketseat</span>
-        </LearningContainer>
-        <LogoContainers>
-          <img src={TypeScript} alt="" />
-          <img src={Styled} alt="" />
-          <img src={Next} alt="" />
-          <img src={Vite} alt="" />
-        </LogoContainers>
-        <p>80% COMPLETADO</p>
-      </DivGrid4>
-      <DivGrid5>f</DivGrid5>
-      <DivGrid6>g</DivGrid6>
-      <DivGrid7>h</DivGrid7>
-      <DivGrid8>i</DivGrid8>
-      <DivGrid9>j</DivGrid9>
-      <DivGrid10>k</DivGrid10>
-      <DivGrid11>l</DivGrid11>
-      <DivGrid12>m</DivGrid12>
-      <DivGrid13>n</DivGrid13>
-      <DivGrid14>o</DivGrid14>
-    </AngryGrid>
+    <>
+      <AngryGrid>
+        <DivGrid0>
+          <h1>Gabriel Alves</h1>
+          <span>Desenvolvedor front-end</span>
+          <p>
+            Olá! Sou o Gabriel e busco oportunidades em empresas onde possa
+            contribuir e evoluir como desenvolvedor.
+          </p>
+          <WorkButton>
+            <span>Veja meu trabalho</span>
+          </WorkButton>
+        </DivGrid0>
+        <DivGrid1>b</DivGrid1>
+        <DivGrid2>
+          <img src={Academia} alt="" />
+        </DivGrid2>
+        <DivGrid3>
+          <MapLibreMap />
+        </DivGrid3>
+        <DivGrid4>
+          <h1> Aprendizado</h1>
+          <LearningContainer>
+            <img src={Estacio} alt="" />
+            <span>Análise e Desenvolvimento de Sistemas</span>
+          </LearningContainer>
+          <p>COMPLETO</p>
+          <Line />
+          <LearningContainer>
+            <img src={Discover} alt="" />
+            <span>Rota: Discover Rocketseat</span>
+          </LearningContainer>
+          <LogoContainers>
+            <img src={Html} alt="" />
+            <img src={Css} alt="" />
+            <img src={JavaScript} alt="" />
+          </LogoContainers>
+          <p>COMPLETO</p>
+          <Line />
+          <LearningContainer>
+            <img src={Ignite} alt="" />
+            <span>Rota: Ignite Rocketseat</span>
+          </LearningContainer>
+          <LogoContainers>
+            <img src={ReactJs} alt="" />
+            <img src={ReactNative} alt="" />
+            <img src={NodeJs} alt="" />
+          </LogoContainers>
+          <p>COMPLETO</p>
+          <Line />
+          <LearningContainer>
+            <img src={ReactJs} alt="" />
+            <span>Trilha: ReactJs Rocketseat</span>
+          </LearningContainer>
+          <LogoContainers>
+            <img src={TypeScript} alt="" />
+            <img src={Styled} alt="" />
+            <img src={Next} alt="" />
+            <img src={Vite} alt="" />
+          </LogoContainers>
+          <p>80% COMPLETO</p>
+        </DivGrid4>
+        <DivGrid5>f</DivGrid5>
+        <DivGrid6>g</DivGrid6>
+        <DivGrid7>h</DivGrid7>
+        <DivGrid8>i</DivGrid8>
+        <DivGrid9>j</DivGrid9>
+        <DivGrid10>k</DivGrid10>
+        <DivGrid11>l</DivGrid11>
+        <DivGrid12>m</DivGrid12>
+        <DivGrid13>n</DivGrid13>
+        <DivGrid14>o</DivGrid14>
+      </AngryGrid>
+      <Container>
+        <GitHubCalendar username="gabriel06089" />
+      </Container>
+    </>
   )
 }

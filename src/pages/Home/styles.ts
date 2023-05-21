@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+`
 
 export const AngryGrid = styled.div`
   display: grid;
@@ -84,6 +89,10 @@ export const DivGrid1 = styled(GridBase)`
 
   grid-row-end: 4;
   grid-column-end: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const DivGrid2 = styled(GridBase)`

@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 32px;
+}
