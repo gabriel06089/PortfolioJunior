@@ -93,8 +93,12 @@ export const DivGrid1 = styled(GridBase)`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `
-
+export const ContainerAbsolute = styled.div`
+  position: absolute;
+  display: flex;
+`
 export const DivGrid2 = styled(GridBase)`
   grid-row-start: 1;
   grid-column-start: 3;

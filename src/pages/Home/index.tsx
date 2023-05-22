@@ -1,6 +1,7 @@
 import {
   AngryGrid,
   Container,
+  ContainerAbsolute,
   DivGrid0,
   DivGrid1,
   DivGrid10,
@@ -21,6 +22,7 @@ import {
   LogoContainers,
   WorkButton,
 } from './styles'
+import React, { useState } from 'react'
 import Academia from '../../assets/FotoAcademia.jpg'
 import Estacio from '../../assets/EstacioLogo.png'
 import Discover from '../../assets/Discover.png'
@@ -36,12 +38,23 @@ import Styled from '../../assets/styled.png'
 import Next from '../../assets/NextJs.png'
 import Vite from '../../assets/Vite.svg'
 import GitHubCalendar from 'react-github-calendar'
-import MapLibreMap from './Components/Map'
+import MapLibreMap from './Components/Map/Map'
+
+import DrawingBoard from './Components/Canvas'
+import Eye from './Components/Persona'
+import Cube from './Components/Persona/Smile'
 
 export function Home() {
+  const [mouseX, setMouseX] = useState(0)
+  const [mouseY, setMouseY] = useState(0)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setMouseX(e.clientX)
+    setMouseY(e.clientY)
+  }
   return (
     <>
-      <AngryGrid>
+      <AngryGrid onMouseMove={handleMouseMove}>
         <DivGrid0>
           <h1>Gabriel Alves</h1>
           <span>Desenvolvedor front-end</span>
@@ -53,7 +66,11 @@ export function Home() {
             <span>Veja meu trabalho</span>
           </WorkButton>
         </DivGrid0>
-        <DivGrid1>b</DivGrid1>
+        <DivGrid1>
+          <ContainerAbsolute>
+            <Cube />
+          </ContainerAbsolute>
+        </DivGrid1>
         <DivGrid2>
           <img src={Academia} alt="" />
         </DivGrid2>
@@ -103,7 +120,9 @@ export function Home() {
           <p>80% COMPLETO</p>
         </DivGrid4>
         <DivGrid5>f</DivGrid5>
-        <DivGrid6>g</DivGrid6>
+        <DivGrid6>
+          <DrawingBoard />
+        </DivGrid6>
         <DivGrid7>h</DivGrid7>
         <DivGrid8>i</DivGrid8>
         <DivGrid9>j</DivGrid9>
