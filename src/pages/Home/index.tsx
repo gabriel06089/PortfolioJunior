@@ -43,6 +43,7 @@ import MapLibreMap from './Components/Map/Map'
 import DrawingBoard from './Components/Canvas'
 import Eye from './Components/Persona'
 import Cube from './Components/Persona/Smile'
+import { DashBoard } from './Components/Dashboard'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -67,9 +68,7 @@ export function Home() {
           </WorkButton>
         </DivGrid0>
         <DivGrid1>
-          <ContainerAbsolute>
-            <Cube />
-          </ContainerAbsolute>
+          {/* <Cube /> */} <DashBoard />
         </DivGrid1>
         <DivGrid2>
           <img src={Academia} alt="" />

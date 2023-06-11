@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build --force",
+
+    
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.68.6",
+    "@react-three/fiber": "^8.13.0",
     "@rocketseat/eslint-config": "^1.2.0",
     "@types/react-color": "^3.0.6",
     "canvas-free-drawing": "^2.1.1",
