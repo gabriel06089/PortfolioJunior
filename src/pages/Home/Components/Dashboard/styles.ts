@@ -2,28 +2,34 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 100%;
   margin: 1rem;
 `
 export const Title = styled.div`
-  margin: 1rem;
+  margin-inline: 1rem;
+  margin-top: 1rem;
 `
 export const InfoContainer = styled.div`
-  margin: 1rem;
+  margin-inline: 1rem;
   h1 {
     color: ${(props) => props.theme.Primary};
     margin-bottom: 0.5rem;
+    font-size: 1.4rem;
   }
   p {
     color: ${(props) => props.theme.Primary};
     opacity: 0.7;
+    margin-bottom: 0.5rem;
   }
 `
 export const NavBar = styled.div`
   display: flex;
 
   gap: 0.5rem;
-  margin: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-inline: 0.5rem;
+  margin-bottom: 1rem;
   border-radius: 100px;
   justify-content: center;
   align-items: center;

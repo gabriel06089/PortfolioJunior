@@ -1,45 +1,77 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, InfoContainer, NavBar, NavButton, Title } from './styles'
 
 export function DashBoard() {
-  const [selectedValue, setSelectedValue] = useState('2023')
+  const [selectedValue, setSelectedValue] = useState('GaOS')
+  const [disableAutoToggle, setDisableAutoToggle] = useState(false)
 
   const handleNavButtonClick = (value: string) => {
     setSelectedValue(value)
+    setDisableAutoToggle(true)
   }
+
+  useEffect(() => {
+    if (!disableAutoToggle) {
+      const timer = setInterval(() => {
+        setSelectedValue((prevValue) => {
+          switch (prevValue) {
+            case 'GaOS':
+              return 'LP'
+            case 'LP':
+              return 'Delivery'
+            case 'Delivery':
+              return 'Todos'
+            case 'Todos':
+              return 'GaOS'
+            default:
+              return prevValue
+          }
+        })
+      }, 5000)
+
+      return () => {
+        clearInterval(timer)
+      }
+    }
+  }, [disableAutoToggle])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDisableAutoToggle(false)
+    }, 10000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [selectedValue])
 
   return (
     <>
       <Container>
         <Title>
-          <h1>Dashboard de Corrida</h1>
+          <h1>Stack Tecnológico</h1>
         </Title>
         <NavBar>
           <NavButton
-            onClick={() => handleNavButtonClick('20')}
-            selected={selectedValue === '20'}
+            onClick={() => handleNavButtonClick('GaOS')}
+            selected={selectedValue === 'GaOS'}
           >
-            <span>20</span>
+            <span>GaOS</span>
           </NavButton>
           <NavButton
-            onClick={() => handleNavButtonClick('21')}
-            selected={selectedValue === '21'}
+            onClick={() => handleNavButtonClick('LP')}
+            selected={selectedValue === 'LP'}
           >
-            <span>21</span>
+            <span>LP</span>
           </NavButton>
           <NavButton
-            onClick={() => handleNavButtonClick('22')}
-            selected={selectedValue === '22'}
+            onClick={() => handleNavButtonClick('Delivery')}
+            selected={selectedValue === 'Delivery'}
           >
-            <span>22</span>
+            <span>Delivery</span>
           </NavButton>
-          <NavButton
-            onClick={() => handleNavButtonClick('2023')}
-            selected={selectedValue === '2023'}
-          >
-            <span>2023</span>
-          </NavButton>
+
           <NavButton
             onClick={() => handleNavButtonClick('Todos')}
             selected={selectedValue === 'Todos'}
@@ -48,84 +80,81 @@ export function DashBoard() {
           </NavButton>
         </NavBar>
         <InfoContainer>
-          {selectedValue === '20' && (
+          {selectedValue === 'GaOS' && (
             <>
-              <p>RUNS</p>
-              <h1>77</h1>
-              <p>DISTANCE</p>
-              <h1>230 km</h1>
-              <p>AVERAGE PACE</p>
-              <h1>5'10"</h1>
-              <p>TIME</p>
-              <h1>19:49:26</h1>
-              <p>AVERAGE DISTANCE</p>
-              <h1>2.9 km/run</h1>
-              <p>ELEVATION GAINED</p>
-              <h1>808m</h1>
+              <p>Linguagens de Programação</p>
+              <h1>
+                HTML, CSS,
+                <br /> JavaScript,
+                <br /> TypeScript
+              </h1>
+              <p>Frameworks / Bibliotecas</p>
+              <h1>React</h1>
+              <p>Biblioteca de Estilização</p>
+              <h1>styled-components</h1>
+              <p>Controle de Versão</p>
+              <h1>Git</h1>
+              <p>Linter</p>
+              <h1>ESLint</h1>
+              <p>Editor de Código</p>
+              <h1>VS Code</h1>
             </>
           )}
-          {selectedValue === '21' && (
+
+          {selectedValue === 'Delivery' && (
             <>
-              <p>RUNS</p>
-              <h1>60</h1>
-              <p>DISTANCE</p>
-              <h1>180 km</h1>
-              <p>AVERAGE PACE</p>
-              <h1>5'30"</h1>
-              <p>TIME</p>
-              <h1>15:43:21</h1>
-              <p>AVERAGE DISTANCE</p>
-              <h1>3 km/run</h1>
-              <p>ELEVATION GAINED</p>
-              <h1>600m</h1>
+              <p>Linguagens de Programação</p>
+              <h1>
+                HTML, CSS,
+                <br /> JavaScript,
+                <br /> TypeScript
+              </h1>
+              <p>Frameworks / Bibliotecas</p>
+              <h1>React</h1>
+              <p>Biblioteca de Estilização</p>
+              <h1>styled-components</h1>
+              <p>Controle de Versão</p>
+              <h1>Git</h1>
+              <p>Linter</p>
+              <h1>ESLint</h1>
+              <p>Editor de Código</p>
+              <h1>VS Code</h1>
             </>
           )}
-          {selectedValue === '22' && (
+          {selectedValue === 'LP' && (
             <>
-              <p>RUNS</p>
-              <h1>70</h1>
-              <p>DISTANCE</p>
-              <h1>210 km</h1>
-              <p>AVERAGE PACE</p>
-              <h1>5'00"</h1>
-              <p>TIME</p>
-              <h1>18:21:54</h1>
-              <p>AVERAGE DISTANCE</p>
-              <h1>3 km/run</h1>
-              <p>ELEVATION GAINED</p>
-              <h1>700m</h1>
-            </>
-          )}
-          {selectedValue === '2023' && (
-            <>
-              <p>RUNS</p>
-              <h1>80</h1>
-              <p>DISTANCE</p>
-              <h1>240 km</h1>
-              <p>AVERAGE PACE</p>
-              <h1>4'30"</h1>
-              <p>TIME</p>
-              <h1>21:10:32</h1>
-              <p>AVERAGE DISTANCE</p>
-              <h1>3 km/run</h1>
-              <p>ELEVATION GAINED</p>
-              <h1>800m</h1>
+              <p>Linguagens de Programação</p>
+              <h1>
+                HTML,
+                <br /> CSS,
+                <br /> JavaScript
+              </h1>
+              <p>Frameworks / Bibliotecas</p>
+              <h1>React</h1>
+              <p>Biblioteca de Estilização</p>
+              <h1>Module CSS</h1>
+              <p>Controle de Versão</p>
+              <h1>Git</h1>
+              <p>Linter</p>
+              <h1>ESLint</h1>
+              <p>Editor de Código</p>
+              <h1>VS Code</h1>
             </>
           )}
           {selectedValue === 'Todos' && (
             <>
-              <p>RUNS</p>
-              <h1>287</h1>
-              <p>DISTANCE</p>
-              <h1>870 km</h1>
-              <p>AVERAGE PACE</p>
-              <h1>5'20"</h1>
-              <p>TIME</p>
-              <h1>68:17:03</h1>
-              <p>AVERAGE DISTANCE</p>
-              <h1>3.0 km/run</h1>
-              <p>ELEVATION GAINED</p>
-              <h1>2908m</h1>
+              <p>Linguagens de Programação</p>
+              <h1>HTML, CSS, JavaScript, TypeScript</h1>
+              <p>Frameworks / Bibliotecas</p>
+              <h1>React</h1>
+              <p>Biblioteca de Estilização</p>
+              <h1>styled-components, Module CSS</h1>
+              <p>Controle de Versão</p>
+              <h1>Git</h1>
+              <p>Linter</p>
+              <h1>ESLint</h1>
+              <p>Editor de Código</p>
+              <h1>VS Code</h1>
             </>
           )}
         </InfoContainer>
