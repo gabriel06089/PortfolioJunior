@@ -127,8 +127,47 @@ export const DivGrid3 = styled(GridBase)`
 
   grid-row-end: 3;
   grid-column-end: 4;
-`
 
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background-color: ${(props) => props.theme.Primary};
+    border-radius: 100% 0 0 0;
+    z-index: -1;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 33px;
+    height: 33px;
+    background-color: ${(props) => props.theme.Primary};
+    border-radius: 0 0 100px 0;
+    z-index: -1;
+  }
+  &::before {
+    top: 0;
+    right: 0;
+  }
+`
+export const Square = styled.div`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+`
 export const DivGrid4 = styled(GridBase)`
   grid-row-start: 1;
   grid-column-start: 4;

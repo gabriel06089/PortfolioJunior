@@ -44,6 +44,9 @@ import DrawingBoard from './Components/Canvas'
 import Eye from './Components/Persona'
 import Cube from './Components/Persona/Smile'
 import { DashBoard } from './Components/Dashboard'
+import { Square } from 'phosphor-react'
+import { Future } from './Components/Future'
+import { Music } from './Components/Music'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -118,11 +121,15 @@ export function Home() {
           </LogoContainers>
           <p>80% COMPLETO</p>
         </DivGrid4>
-        <DivGrid5>f</DivGrid5>
+        <DivGrid5>
+          <Future />
+        </DivGrid5>
         <DivGrid6>
-          <DrawingBoard />
+          <Music />
         </DivGrid6>
-        <DivGrid7>h</DivGrid7>
+        <DivGrid7>
+          <DrawingBoard />
+        </DivGrid7>
         <DivGrid8>i</DivGrid8>
         <DivGrid9>j</DivGrid9>
         <DivGrid10>k</DivGrid10>

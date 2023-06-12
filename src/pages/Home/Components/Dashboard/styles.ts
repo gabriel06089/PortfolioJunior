@@ -29,7 +29,7 @@ export const NavBar = styled.div`
 
   gap: 0.5rem;
   margin-inline: 0.5rem;
-  margin-bottom: 1rem;
+
   border-radius: 100px;
   justify-content: center;
   align-items: center;
