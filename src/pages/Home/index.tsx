@@ -62,7 +62,7 @@ import { DashBoard } from './Components/Dashboard'
 import { ArrowRight, CaretLeft, CaretRight, Square } from 'phosphor-react'
 import { Future } from './Components/Future'
 import { Music } from './Components/Music'
-import { ProjectDisplay } from './Components/ProjectDisplay'
+import { ProjectDisplayPort } from './Components/ProjectDisplayPort'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -204,7 +204,9 @@ export function Home() {
             <ArrowRight weight="bold" size={30} />
           </ArrowButton>
         </DivGrid7>
-        <DivGrid8>i</DivGrid8>
+        <DivGrid8>
+          <ProjectDisplayPort />
+        </DivGrid8>
         <DivGrid9>j</DivGrid9>
         <DivGrid10>
           <img src={Kedin} alt="" />

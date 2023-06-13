@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 3rem;
   padding: 1rem;
-  margin-inline: 2rem;
+  margin-inline: 1rem;
   a {
     text-decoration: none;
     color: inherit;
