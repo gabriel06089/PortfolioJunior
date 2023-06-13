@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, ReactNode, useEffect } from 'react'
 import { defaultTheme, defaultThemeDark } from '../styles/themes/default'
 
 interface ThemeContextType {
@@ -24,6 +24,15 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       setTheme(defaultTheme)
     }
   }
+
+  useEffect(() => {
+    const prefersDarkTheme = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches
+    if (prefersDarkTheme) {
+      setTheme(defaultThemeDark)
+    }
+  }, [])
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

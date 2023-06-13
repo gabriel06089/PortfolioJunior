@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
+
 import './DrawingBoard.css'
+import { Eraser, PaintBrush, TrashSimple } from 'phosphor-react'
 
 const DrawingBoard: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -7,9 +9,11 @@ const DrawingBoard: React.FC = () => {
   const [brushSize, setBrushSize] = useState<number>(5)
   const [drawing, setDrawing] = useState<boolean>(false)
   const [history, setHistory] = useState<CanvasRenderingContext2D[]>([])
+  const [isEraser, setIsEraser] = useState<boolean>(false)
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setColor(event.target.value)
+    setIsEraser(false) // Reset the eraser mode when changing color
   }
 
   const handleBrushSizeChange = (
@@ -66,7 +70,11 @@ const DrawingBoard: React.FC = () => {
       if (canvas && ctx) {
         const { offsetX, offsetY } = getCoordinates(event)
         ctx.lineTo(offsetX, offsetY)
-        ctx.strokeStyle = color
+        if (isEraser) {
+          ctx.strokeStyle = '#F5F5F5' // Use white color for eraser
+        } else {
+          ctx.strokeStyle = color
+        }
         ctx.lineWidth = brushSize
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
@@ -107,7 +115,14 @@ const DrawingBoard: React.FC = () => {
     }
     return { offsetX, offsetY }
   }
-
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext('2d')
+    if (canvas && ctx) {
+      ctx.fillStyle = 'whitesmoke'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+    }
+  }, [])
   useEffect(() => {
     const disableScroll = (event: TouchEvent) => {
       event.preventDefault()
@@ -126,10 +141,15 @@ const DrawingBoard: React.FC = () => {
     }
   }, [drawing])
 
+  const handleToggleEraser = () => {
+    setIsEraser((prevIsEraser) => !prevIsEraser)
+  }
+
   return (
     <div className="drawing-board">
+      <h1>Deixe sua Assintura</h1>
       <div className="slider">
-        <label htmlFor="brushSize">Brush Size:</label>
+        <label htmlFor="brushSize"></label>
         <input
           type="range"
           id="brushSize"
@@ -139,31 +159,38 @@ const DrawingBoard: React.FC = () => {
           onChange={handleBrushSizeChange}
         />
       </div>
+      <div className="Container-Options">
+        <div className="color-picker">
+          <label htmlFor="color">Color:</label>
 
-      <div className="color-picker">
-        <label htmlFor="color">Color:</label>
-        <input
-          type="color"
-          id="color"
-          value={color}
-          onChange={handleColorChange}
-        />
-      </div>
+          <input
+            type="color"
+            id="color"
+            value={color}
+            onChange={handleColorChange}
+            style={{ appearance: 'none' }}
+          />
+        </div>
 
-      <div className="buttons">
-        <button className="undo" onClick={handleUndo}>
-          Undo
-        </button>
-        <button className="clear" onClick={handleClearCanvas}>
-          Clear
-        </button>
+        <div className="buttons">
+          <button className="clear" onClick={handleClearCanvas}>
+            <TrashSimple size={24} weight="fill" />
+          </button>
+          <button className="eraser" onClick={handleToggleEraser}>
+            {isEraser ? (
+              <PaintBrush size={24} weight="fill" />
+            ) : (
+              <Eraser size={24} weight="fill" />
+            )}
+          </button>
+        </div>
       </div>
 
       <canvas
         className="canvaDraw"
         ref={canvasRef}
-        width={300}
-        height={100}
+        width={604}
+        height={171}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}

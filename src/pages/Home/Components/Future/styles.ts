@@ -17,9 +17,19 @@ export const Desc = styled.span`
 `
 export const Button = styled.button`
   border-style: solid;
-  background-color: ${(props) => props.theme['Secondary-Button']};
+  background: linear-gradient(
+        ${(props) => props.theme['Secondary-Button']},
+        ${(props) => props.theme['Secondary-Button']}
+      )
+      padding-box,
+    linear-gradient(
+        to top right,
+        ${(props) => props.theme.UltraContrast},
+        ${(props) => props.theme.Contrast}
+      )
+      border-box;
   border-radius: 100px;
-  border: 3px solid ${(props) => props.theme.Secondary};
+  border: 2.5px solid transparent;
   box-shadow: 1px 2px 5px ${(props) => props.theme.Secondary};
 
   padding: 0.4rem 0.5rem;

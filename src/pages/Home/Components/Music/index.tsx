@@ -5,6 +5,9 @@ import Star from '../../../../assets/StarOverhead.jpg'
 import Spots from '../../../../assets/TheInkSpots.jpg'
 import Logo from '../../../../assets/YouTubeMusic_Logo.png'
 import Two from '../../../../assets/TwoOfUs.jpg'
+import Ghost from '../../../../assets/Christmas.jpg'
+import Time from '../../../../assets/Time.jpg'
+import GoodBye from '../../../../assets/GoodBy.jpg'
 import AudioWave from './LoadbarSound'
 
 const musicList = [
@@ -32,7 +35,24 @@ const musicList = [
     author: 'The Pillows',
     link: 'https://www.youtube.com/watch?v=CMxCmmHkyCE',
   },
-  
+  {
+    thumb: Ghost,
+    title: 'Christmas of a Wandering Ghost',
+    author: "Snail's House",
+    link: 'https://music.youtube.com/watch?v=0t3mAuKYpI8&list=LM',
+  },
+  {
+    thumb: Time,
+    title: 'Time In A Bottle',
+    author: 'Jim Croce',
+    link: 'https://music.youtube.com/watch?v=9h1davKgBYM&list=LM',
+  },
+  {
+    thumb: GoodBye,
+    title: 'Goodbye To A World',
+    author: 'Porter Robinson',
+    link: 'https://music.youtube.com/watch?v=cdHdPu4JqSE&list=LM',
+  },
 ]
 
 export function Music() {
@@ -71,7 +91,7 @@ export function Music() {
         }
         return null
       })
-    }, 1 * 60 * 1000) 
+    }, 1 * 60 * 1000)
 
     return () => {
       clearInterval(interval)

@@ -1,7 +1,12 @@
 import {
   AngryGrid,
+  ArrowButton,
+  ArrowGray,
+  ArrowPhotoButton1,
+  ArrowPhotoButton2,
   Container,
   ContainerAbsolute,
+  ContainerIndex,
   DivGrid0,
   DivGrid1,
   DivGrid10,
@@ -20,10 +25,16 @@ import {
   LearningContainer,
   Line,
   LogoContainers,
+  PointIndex,
+  SVG1,
+  SVG2,
   WorkButton,
 } from './styles'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Academia from '../../assets/FotoAcademia.jpg'
+import Bone from '../../assets/Bone.png'
+import Sorriso from '../../assets/Sorriso.png'
+
 import Estacio from '../../assets/EstacioLogo.png'
 import Discover from '../../assets/Discover.png'
 import Html from '../../assets/Html.png'
@@ -37,6 +48,10 @@ import TypeScript from '../../assets/Typescript.png'
 import Styled from '../../assets/styled.png'
 import Next from '../../assets/NextJs.png'
 import Vite from '../../assets/Vite.svg'
+import Git from '../../assets/GitHub-transformed.png'
+import Kedin from '../../assets/Linkedin.png'
+import Insta from '../../assets/Instagram.png'
+
 import GitHubCalendar from 'react-github-calendar'
 import MapLibreMap from './Components/Map/Map'
 
@@ -44,14 +59,54 @@ import DrawingBoard from './Components/Canvas'
 import Eye from './Components/Persona'
 import Cube from './Components/Persona/Smile'
 import { DashBoard } from './Components/Dashboard'
-import { Square } from 'phosphor-react'
+import { ArrowRight, CaretLeft, CaretRight, Square } from 'phosphor-react'
 import { Future } from './Components/Future'
 import { Music } from './Components/Music'
+import { ProjectDisplay } from './Components/ProjectDisplay'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
   const [mouseY, setMouseY] = useState(0)
+  const [currentImage, setCurrentImage] = useState(Academia)
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => {
+        if (prevImage === Academia) {
+          return Bone
+        } else if (prevImage === Bone) {
+          return Sorriso
+        } else {
+          return Academia
+        }
+      })
+    }, 12000)
+
+    return () => clearInterval(interval)
+  }, [])
+  const handleBackClick = () => {
+    setCurrentImage((prevImage) => {
+      if (prevImage === Academia) {
+        return Sorriso
+      } else if (prevImage === Bone) {
+        return Academia
+      } else {
+        return Bone
+      }
+    })
+  }
+
+  const handleForwardClick = () => {
+    setCurrentImage((prevImage) => {
+      if (prevImage === Academia) {
+        return Bone
+      } else if (prevImage === Bone) {
+        return Sorriso
+      } else {
+        return Academia
+      }
+    })
+  }
   const handleMouseMove = (e: React.MouseEvent) => {
     setMouseX(e.clientX)
     setMouseY(e.clientY)
@@ -74,7 +129,22 @@ export function Home() {
           {/* <Cube /> */} <DashBoard />
         </DivGrid1>
         <DivGrid2>
-          <img src={Academia} alt="" />
+          <img src={currentImage} alt="" />
+          <ContainerIndex>
+            <ArrowPhotoButton1 onClick={handleBackClick} />
+            <SVG1 onClick={handleBackClick}>
+              <CaretLeft size={20} weight="bold" />
+            </SVG1>
+
+            <PointIndex active={currentImage === Academia} />
+            <PointIndex active={currentImage === Bone} />
+            <PointIndex active={currentImage === Sorriso} />
+
+            <SVG2 onClick={handleForwardClick}>
+              <CaretRight size={20} weight="bold" />
+            </SVG2>
+            <ArrowPhotoButton2 onClick={handleForwardClick} />
+          </ContainerIndex>
         </DivGrid2>
         <DivGrid3>
           <MapLibreMap />
@@ -128,14 +198,28 @@ export function Home() {
           <Music />
         </DivGrid6>
         <DivGrid7>
-          <DrawingBoard />
+          <img src={Git} alt="" />
+          <ArrowButton>
+            {' '}
+            <ArrowRight weight="bold" size={30} />
+          </ArrowButton>
         </DivGrid7>
         <DivGrid8>i</DivGrid8>
         <DivGrid9>j</DivGrid9>
-        <DivGrid10>k</DivGrid10>
-        <DivGrid11>l</DivGrid11>
+        <DivGrid10>
+          <img src={Kedin} alt="" />
+          <ArrowRight weight="bold" size={30} />
+          <ArrowGray> </ArrowGray>
+        </DivGrid10>
+        <DivGrid11>
+          <img src={Insta} alt="" />
+          <ArrowRight weight="bold" size={30} />
+          <ArrowGray> </ArrowGray>
+        </DivGrid11>
         <DivGrid12>m</DivGrid12>
-        <DivGrid13>n</DivGrid13>
+        <DivGrid13>
+          <DrawingBoard />
+        </DivGrid13>
         <DivGrid14>o</DivGrid14>
       </AngryGrid>
       <Container>

@@ -1,5 +1,18 @@
-import styled from 'styled-components'
-
+import styled, { keyframes } from 'styled-components'
+interface PointIndexProps {
+  active?: boolean
+}
+const fadeInOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -64,7 +77,11 @@ export const WorkButton = styled.button`
   margin-top: 1rem;
 
   border-style: solid;
-  background: linear-gradient(white, white) padding-box,
+  background: linear-gradient(
+        ${(props) => props.theme['Secondary-Button']},
+        ${(props) => props.theme['Secondary-Button']}
+      )
+      padding-box,
     linear-gradient(
         to top right,
         ${(props) => props.theme.UltraContrast},
@@ -108,17 +125,88 @@ export const DivGrid2 = styled(GridBase)`
   width: 100%;
 
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
+  transition: background-image 0.5s ease-in-out;
   img {
+    display: block;
     position: absolute;
-
-    transform: translateY(-50%);
-    transform: translateX(0%);
-    width: auto;
+    width: 18.5rem;
     height: 100%;
     object-fit: cover;
   }
+`
+export const ContainerIndex = styled.div`
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+
+  gap: 0.5rem;
+  bottom: 1rem;
+  transition: transform 0.5s ease-in-out;
+`
+export const SVG1 = styled.div`
+  svg {
+    color: white;
+    position: absolute;
+
+    right: 7.9rem;
+    bottom: 1.4rem;
+    z-index: 99;
+  }
+`
+export const SVG2 = styled.div`
+  svg {
+    color: white;
+    position: absolute;
+
+    left: 7.9rem;
+    bottom: 1.4rem;
+    z-index: 99;
+  }
+`
+export const ArrowPhotoButton1 = styled.button`
+  height: 3rem;
+  width: 3rem;
+  background-color: black;
+
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.3;
+  position: absolute;
+
+  right: 7rem;
+  bottom: 0.5rem;
+`
+export const ArrowPhotoButton2 = styled.button`
+  height: 3rem;
+  width: 3rem;
+  background-color: black;
+
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.3;
+  left: 7rem;
+  bottom: 0.5rem;
+`
+export const PointIndex = styled.div<PointIndexProps>`
+  height: 0.8rem;
+  width: 0.8rem;
+
+  border: none;
+  border-radius: 50%;
+  z-index: 99;
+  opacity: 0.8;
+  background-color: ${(props) => (props.active ? 'whitesmoke' : 'gray')};
+  margin-bottom: 1.5rem;
 `
 
 export const DivGrid3 = styled(GridBase)`
@@ -244,6 +332,17 @@ export const DivGrid7 = styled(GridBase)`
 
   grid-row-end: 5;
   grid-column-end: 3;
+  position: relative;
+  background-color: #171515;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 7rem;
+    width: 7rem;
+  }
 `
 
 export const DivGrid8 = styled(GridBase)`
@@ -268,6 +367,24 @@ export const DivGrid10 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 2;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0077b5;
+  img {
+    height: 7rem;
+    width: 7rem;
+  }
+  svg {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    z-index: 99;
+  }
 `
 
 export const DivGrid11 = styled(GridBase)`
@@ -276,6 +393,32 @@ export const DivGrid11 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 3;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #f7786b 45%,
+    #cc1d80 60%,
+    #285aeb 90%
+  );
+  img {
+    height: 7rem;
+    width: 7rem;
+  }
+  svg {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    z-index: 99;
+  }
 `
 
 export const DivGrid12 = styled(GridBase)`
@@ -300,4 +443,32 @@ export const DivGrid14 = styled(GridBase)`
 
   grid-row-end: 7;
   grid-column-end: 5;
+`
+export const ArrowButton = styled.button`
+  border-radius: 100%;
+  height: 3rem;
+  width: 3rem;
+
+  background-color: #000000;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  svg {
+    color: white;
+  }
+`
+export const ArrowGray = styled(ArrowButton)`
+  background-color: #000000;
+  opacity: 0.2;
+
+  img {
+    opacity: 1;
+  }
 `

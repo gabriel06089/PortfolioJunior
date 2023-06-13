@@ -4,8 +4,8 @@ export const defaultTheme = {
   'primary-Button': '#646462',
   'Secondary-Button': '#f7f7f7',
   Accent: '#303130 ',
-  Contrast: '#97e8cd',
-  UltraContrast: '#39d353',
+  Contrast: '#ffb061',
+  UltraContrast: '#f73b4e',
 }
 export const defaultThemeDark = {
   Primary: '#f7f7f7',
@@ -13,6 +13,6 @@ export const defaultThemeDark = {
   'primary-Button': '#333333',
   'Secondary-Button': '#444444',
   Accent: '#555555',
-  Contrast: '#39d353',
-  UltraContrast: '#97e8cd',
+  Contrast: '#ffb061',
+  UltraContrast: '#f73b4e',
 }

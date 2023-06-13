@@ -45,7 +45,11 @@ export const NavButton = styled.button`
 `
 export const ContactButton = styled.button`
   border-style: solid;
-  background: linear-gradient(white, white) padding-box,
+  background: linear-gradient(
+        ${(props) => props.theme['Secondary-Button']},
+        ${(props) => props.theme['Secondary-Button']}
+      )
+      padding-box,
     linear-gradient(
         to top right,
         ${(props) => props.theme.UltraContrast},
@@ -53,7 +57,7 @@ export const ContactButton = styled.button`
       )
       border-box;
   border-radius: 100px;
-  border: 3px solid transparent;
+  border: 2.5px solid transparent;
 
   padding: 0.5rem 0.8rem;
   span {
