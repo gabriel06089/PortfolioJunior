@@ -2,28 +2,22 @@ import styled, { keyframes } from 'styled-components'
 interface PointIndexProps {
   active?: boolean
 }
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 2rem;
+  a {
+    height: 100%;
+    width: 100%;
+  }
 `
 
 export const AngryGrid = styled.div`
   display: grid;
 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-inline: 5rem;
   gap: 1rem;
@@ -92,6 +86,10 @@ export const WorkButton = styled.button`
   border: 2px solid transparent;
 
   padding: 0.3rem 0.8rem;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
   span {
     font-family: 'Inter';
     font-weight: bold;
@@ -183,6 +181,10 @@ export const ArrowPhotoButton1 = styled.button`
 
   right: 7rem;
   bottom: 0.5rem;
+  &:hover {
+    outline: 10px solid rgba(255, 255, 255, 0.5);
+  }
+  transition: all 0.5s;
 `
 export const ArrowPhotoButton2 = styled.button`
   height: 3rem;
@@ -196,6 +198,10 @@ export const ArrowPhotoButton2 = styled.button`
   opacity: 0.3;
   left: 7rem;
   bottom: 0.5rem;
+  &:hover {
+    outline: 10px solid rgba(255, 255, 255, 0.5);
+  }
+  transition: all 0.5s;
 `
 export const PointIndex = styled.div<PointIndexProps>`
   height: 0.8rem;
@@ -338,11 +344,20 @@ export const DivGrid7 = styled(GridBase)`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: auto;
 
   img {
     height: 7rem;
     width: 7rem;
   }
+`
+export const LinkDivGrid7 = styled.a`
+  grid-row-start: 4;
+  grid-column-start: 1;
+
+  grid-row-end: 5;
+  grid-column-end: 3;
 `
 
 export const DivGrid8 = styled(GridBase)`
@@ -370,10 +385,13 @@ export const DivGrid10 = styled(GridBase)`
 
   position: relative;
 
+  height: 100%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #0077b5;
+
   img {
     height: 7rem;
     width: 7rem;
@@ -386,6 +404,13 @@ export const DivGrid10 = styled(GridBase)`
     z-index: 99;
   }
 `
+export const LinkGrid10 = styled.a`
+  grid-row-start: 5;
+  grid-column-start: 1;
+
+  grid-row-end: 6;
+  grid-column-end: 2;
+`
 
 export const DivGrid11 = styled(GridBase)`
   grid-row-start: 5;
@@ -393,7 +418,8 @@ export const DivGrid11 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 3;
-
+  height: 100%;
+  width: auto;
   position: relative;
 
   display: flex;
@@ -420,7 +446,13 @@ export const DivGrid11 = styled(GridBase)`
     z-index: 99;
   }
 `
+export const LinkGrid11 = styled.a`
+  grid-row-start: 5;
+  grid-column-start: 2;
 
+  grid-row-end: 6;
+  grid-column-end: 3;
+`
 export const DivGrid12 = styled(GridBase)`
   grid-row-start: 6;
   grid-column-start: 1;
@@ -463,6 +495,10 @@ export const ArrowButton = styled.button`
   svg {
     color: white;
   }
+  &:hover {
+    outline: 10px solid rgba(255, 255, 255, 0.5);
+  }
+  transition: all 0.5s;
 `
 export const ArrowGray = styled(ArrowButton)`
   background-color: #000000;
@@ -470,5 +506,9 @@ export const ArrowGray = styled(ArrowButton)`
 
   img {
     opacity: 1;
+  }
+  &:hover {
+    outline: 10px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
   }
 `

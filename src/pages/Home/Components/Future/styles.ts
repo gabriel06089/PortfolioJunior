@@ -31,7 +31,10 @@ export const Button = styled.button`
   border-radius: 100px;
   border: 2.5px solid transparent;
   box-shadow: 1px 2px 5px ${(props) => props.theme.Secondary};
-
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
   padding: 0.4rem 0.5rem;
   span {
     font-family: 'Inter';

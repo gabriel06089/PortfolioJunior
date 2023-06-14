@@ -6,35 +6,34 @@ import {
   ImgContainer,
   Title,
 } from './styles'
-import Portfolio from '../../../../assets/Portfolio.png'
-import Type from '../../../../assets/Typescript.png'
+import LP from '../../../../assets/LP.png'
+import Java from '../../../../assets/Javascript.svg'
 import CSS from '../../../../assets/Css.svg'
-import Styled from '../../../../assets/styled.png'
+import Module from '../../../../assets/css-modules-logo.png'
 import React from '../../../../assets/ReactLogoClean.png'
 import Vite from '../../../../assets/Vite.svg'
-export function ProjectDisplayPort() {
+export function ProjectDisplayLP() {
   return (
     <Container>
       <Title>
         <span>PROJETO</span>
-        <h1>Portfolio(GaOS)</h1>
+        <h1>Landing Page</h1>
       </Title>
       <ContainerName>
         <span>STACK TECNOLÓGICO</span>
         <ImgContainer>
+          <img src={Java} alt="" />
           <img src={CSS} alt="" />
-          <img src={Styled} alt="" />
           <img src={React} alt="" />
-          <img src={Type} alt="" />
           <img src={Vite} alt="" />
+          <img src={Module} alt="" />
         </ImgContainer>
       </ContainerName>
+      <a href=""></a>
       <ContainerPort>
-        <a href="">
-          <img src={Portfolio} alt="" />
-        </a>
+        <img src={LP} alt="" />
       </ContainerPort>
-      <a href="">
+      <a href="https://bezerranetoadvocacia.com">
         <ButtonView>
           <span>Ver o projeto</span>
         </ButtonView>

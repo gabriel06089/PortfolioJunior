@@ -26,16 +26,18 @@ export const ContainerPort = styled.div`
   flex-direction: column;
 
   img {
-    height: 20rem;
-    width: 14rem;
+    height: 20.5rem;
+    width: 14.5rem;
     object-fit: cover;
-    object-position: 26%;
+    object-position: 74%;
     border-radius: 16px;
   }
 `
 export const ContainerName = styled.div`
+  align-self: start;
+
   img {
-    height: 2.8rem;
+    height: 2.5rem;
     width: 2.8rem;
     object-fit: contain;
   }
@@ -53,7 +55,7 @@ export const ImgContainer = styled.div`
 export const Title = styled.div`
   margin-top: 2rem;
   margin-bottom: 1rem;
-
+  align-self: flex-start;
   span {
     opacity: 0.5;
     letter-spacing: -0.5px;

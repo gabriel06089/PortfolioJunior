@@ -77,21 +77,16 @@ export function Music() {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem(
-      'currentMusicIndex',
-      currentMusicIndex !== null ? currentMusicIndex.toString() : '',
-    )
-  }, [currentMusicIndex])
-
-  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMusicIndex((prevIndex) => {
         if (prevIndex !== null) {
-          return (prevIndex + 1) % musicList.length
+          const newIndex = (prevIndex + 1) % musicList.length
+          localStorage.setItem('currentMusicIndex', newIndex.toString())
+          return newIndex
         }
         return null
       })
-    }, 1 * 60 * 1000)
+    }, 2 * 60000)
 
     return () => {
       clearInterval(interval)

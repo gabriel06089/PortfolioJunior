@@ -55,5 +55,9 @@ export const NavButton = styled.button<{ selected: boolean }>`
   transform: ${(props) => (props.selected ? 'scale(1)' : 'scale(0.9)')};
   cursor: pointer;
   border-radius: 100px;
-  transition: background-color 0.1s, opacity 0.3s, transform 0.2s;
+  transition: background-color 0.1s, opacity 0.2s, transform 0.2s;
+  pointer-events: ${(props) => (props.selected ? 'none' : 'auto')};
+  &:hover {
+    opacity: 0.2;
+  }
 `

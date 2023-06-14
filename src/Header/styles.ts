@@ -16,6 +16,7 @@ export const NavBar = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1rem;
+  margin-left: 3rem;
 
   box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
   background-color: ${(props) => props.theme['Secondary-Button']};

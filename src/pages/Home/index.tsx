@@ -24,6 +24,9 @@ import {
   DivGrid9,
   LearningContainer,
   Line,
+  LinkDivGrid7,
+  LinkGrid10,
+  LinkGrid11,
   LogoContainers,
   PointIndex,
   SVG1,
@@ -63,6 +66,7 @@ import { ArrowRight, CaretLeft, CaretRight, Square } from 'phosphor-react'
 import { Future } from './Components/Future'
 import { Music } from './Components/Music'
 import { ProjectDisplayPort } from './Components/ProjectDisplayPort'
+import { ProjectDisplayLP } from './Components/ProjectDisplayLP'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -197,36 +201,39 @@ export function Home() {
         <DivGrid6>
           <Music />
         </DivGrid6>
-        <DivGrid7>
-          <img src={Git} alt="" />
-          <ArrowButton>
-            {' '}
-            <ArrowRight weight="bold" size={30} />
-          </ArrowButton>
-        </DivGrid7>
+        <LinkDivGrid7 href="https://github.com/gabriel06089">
+          {' '}
+          <DivGrid7>
+            <img src={Git} alt="" />
+            <ArrowButton>
+              {' '}
+              <ArrowRight weight="bold" size={30} />
+            </ArrowButton>
+          </DivGrid7>
+        </LinkDivGrid7>
         <DivGrid8>
           <ProjectDisplayPort />
         </DivGrid8>
-        <DivGrid9>j</DivGrid9>
-        <DivGrid10>
-          <img src={Kedin} alt="" />
-          <ArrowRight weight="bold" size={30} />
-          <ArrowGray> </ArrowGray>
-        </DivGrid10>
-        <DivGrid11>
-          <img src={Insta} alt="" />
-          <ArrowRight weight="bold" size={30} />
-          <ArrowGray> </ArrowGray>
-        </DivGrid11>
-        <DivGrid12>m</DivGrid12>
-        <DivGrid13>
-          <DrawingBoard />
-        </DivGrid13>
-        <DivGrid14>o</DivGrid14>
+        <DivGrid9>
+          <ProjectDisplayLP />
+        </DivGrid9>
+        <LinkGrid10 href="www.linkedin.com/in/gabriel-alves-araujo0608">
+          <DivGrid10>
+            <img src={Kedin} alt="" />
+            <ArrowRight weight="bold" size={30} />
+            <ArrowGray />
+          </DivGrid10>
+        </LinkGrid10>
+
+        <LinkGrid11 href="https://www.instagram.com/gabriel.a1ves/">
+          <DivGrid11>
+            <img src={Insta} alt="" />
+            <ArrowRight weight="bold" size={30} />
+            <ArrowGray />
+          </DivGrid11>
+        </LinkGrid11>
       </AngryGrid>
-      <Container>
-        <GitHubCalendar username="gabriel06089" />
-      </Container>
+      <Container>{/* <GitHubCalendar username="gabriel06089" /> */}</Container>
     </>
   )
 }

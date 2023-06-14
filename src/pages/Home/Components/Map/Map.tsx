@@ -4,6 +4,7 @@ import {
   ReactNode,
   useContext,
   useEffect,
+  useMemo,
 } from 'react'
 import maplibregl from 'maplibre-gl'
 import { ThemeContext } from '../../../../contexts/ThemeContext'
@@ -79,7 +80,11 @@ const MapContainer = () => {
       ? 'https://api.maptiler.com/maps/streets/style.json?key=wbgydw4rI3an4Xz4VI9T'
       : 'https://api.maptiler.com/maps/streets-dark/style.json?key=wbgydw4rI3an4Xz4VI9T'
 
-  return <MapLibreMap style={mapStyle} />
+  const mapComponent = useMemo(() => {
+    return <MapLibreMap style={mapStyle} />
+  }, [mapStyle])
+
+  return mapComponent
 }
 
 export default MapContainer
