@@ -89,7 +89,7 @@ export const WorkButton = styled.button`
       border-box;
   border-radius: 100px;
   border: 2px solid transparent;
-
+  box-shadow: 1px 2px 5px ${(props) => props.theme.Secondary};
   padding: 0.5rem 0.8rem;
   transition: transform 0.3s ease;
   &:hover {

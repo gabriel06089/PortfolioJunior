@@ -5,15 +5,11 @@ import {
   ArrowPhotoButton1,
   ArrowPhotoButton2,
   Container,
-  ContainerAbsolute,
   ContainerIndex,
   DivGrid0,
   DivGrid1,
   DivGrid10,
   DivGrid11,
-  DivGrid12,
-  DivGrid13,
-  DivGrid14,
   DivGrid2,
   DivGrid3,
   DivGrid4,
@@ -59,7 +55,7 @@ import Insta from '../../assets/Instagram.png'
 import MapLibreMap from '../Home/Components/Map/Map'
 
 import { DashBoard } from '../Home/Components/Dashboard'
-import { ArrowRight, CaretLeft, CaretRight, Square } from 'phosphor-react'
+import { ArrowRight, CaretLeft, CaretRight } from 'phosphor-react'
 import { Future } from '../Home/Components/Future'
 import { Music } from '../Home/Components/Music'
 import { ProjectDisplayPort } from '../Home/Components/ProjectDisplayPort'
@@ -67,6 +63,7 @@ import { ProjectDisplayLP } from '../Home/Components/ProjectDisplayLP'
 
 import { ProjectDisplayCD } from './ProjectDisplayLP'
 
+import { Link } from 'react-router-dom'
 export function Projects() {
   const [mouseX, setMouseX] = useState(0)
   const [mouseY, setMouseY] = useState(0)
@@ -125,7 +122,9 @@ export function Projects() {
             contribuir e evoluir como desenvolvedor.
           </p>
           <WorkButton>
-            <span>Veja meu trabalho</span>
+            <Link to="/about">
+              <span>Saiba mais</span>
+            </Link>
           </WorkButton>
         </DivGrid0>
         <DivGrid1>

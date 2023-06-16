@@ -12,6 +12,8 @@ import CSS from '../../../assets/Css.svg'
 import Styled from '../../../assets/styled.png'
 import React from '../../../assets/ReactLogoClean.png'
 import Vite from '../../../assets/Vite.svg'
+
+import { Link } from 'react-router-dom'
 export function ProjectDisplayCD() {
   return (
     <Container>
@@ -38,9 +40,10 @@ export function ProjectDisplayCD() {
           <span>Ver o projeto</span>
         </ButtonView>
       </a>
-      <a href="">
+
+      <Link to="/aboutProjects/projectCD">
         <p>Sobre o Projeto</p>
-      </a>
+      </Link>
     </Container>
   )
 }

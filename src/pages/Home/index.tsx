@@ -59,8 +59,7 @@ import GitHubCalendar from 'react-github-calendar'
 import MapLibreMap from './Components/Map/Map'
 
 import DrawingBoard from './Components/Canvas'
-import Eye from './Components/Persona'
-import Cube from './Components/Persona/Smile'
+
 import { DashBoard } from './Components/Dashboard'
 import { ArrowRight, CaretLeft, CaretRight, Square } from 'phosphor-react'
 import { Future } from './Components/Future'

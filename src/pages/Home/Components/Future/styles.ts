@@ -13,7 +13,6 @@ export const Title = styled.h1``
 export const Desc = styled.span`
   margin-inline: 2rem;
   text-align: center;
-  margin-block: 1rem;
 `
 export const Button = styled.button`
   border-style: solid;

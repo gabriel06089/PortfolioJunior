@@ -6,6 +6,7 @@ import {
   ImgContainer,
   Title,
 } from './styles'
+import { Link } from 'react-router-dom'
 import Portfolio from '../../../../assets/Portfolio.png'
 import Type from '../../../../assets/Typescript.png'
 import CSS from '../../../../assets/Css.svg'
@@ -39,9 +40,9 @@ export function ProjectDisplayPort() {
           <span>Ver o projeto</span>
         </ButtonView>
       </a>
-      <a href="">
+      <Link to="/aboutProjects/projectOS">
         <p>Sobre o Projeto</p>
-      </a>
+      </Link>
     </Container>
   )
 }

@@ -6,6 +6,7 @@ import {
   ImgContainer,
   Title,
 } from './styles'
+import { Link } from 'react-router-dom'
 import LP from '../../../../assets/LP.png'
 import Java from '../../../../assets/Javascript.svg'
 import CSS from '../../../../assets/Css.svg'
@@ -38,9 +39,9 @@ export function ProjectDisplayLP() {
           <span>Ver o projeto</span>
         </ButtonView>
       </a>
-      <a href="">
+      <Link to="/aboutProjects/projectLP">
         <p>Sobre o Projeto</p>
-      </a>
+      </Link>
     </Container>
   )
 }
