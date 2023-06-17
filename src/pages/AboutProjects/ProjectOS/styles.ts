@@ -25,7 +25,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-inline: 5rem;
-
+  margin-top: 2rem;
   h1 {
     margin-bottom: 1rem;
   }

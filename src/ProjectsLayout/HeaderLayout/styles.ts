@@ -37,11 +37,16 @@ export const NavButton = styled.button`
 
   &.selected {
     background-color: ${(props) => props.theme.Secondary};
-
     width: auto;
     height: auto;
-
     border-radius: 100px;
+    pointer-events: none;
+  }
+
+  transition: opacity 0.2s;
+
+  &:not(.selected):hover {
+    opacity: 0.2;
   }
 `
 export const ContactButton = styled.button`
