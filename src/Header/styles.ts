@@ -6,6 +6,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-inline: 4rem;
+  @media (max-width: 768px) {
+    margin-inline: 1.4rem;
+  }
 `
 export const NavBar = styled.div`
   display: flex;

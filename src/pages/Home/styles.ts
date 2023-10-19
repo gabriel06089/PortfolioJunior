@@ -3,6 +3,9 @@ interface PointIndexProps {
   active?: boolean
 }
 
+const reducaoDeTamanho1024 = '80%'
+const reducaoDeTamanho768 = '60%'
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -12,26 +15,44 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  @media (max-width: 1024px) {
+    transform: scale(${reducaoDeTamanho1024});
+    transform-origin: center;
+  }
 `
 
 export const AngryGrid = styled.div`
+  justify-content: center;
   display: grid;
-
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-inline: 5rem;
   gap: 1rem;
   position: relative;
   max-width: 100%;
-  column-gap: 24px;
-  row-gap: 24px;
+  column-gap: 1.2rem;
+  row-gap: 1.2rem;
   margin-bottom: 80px;
+
+  @media (max-width: 1024px) {
+    transform: scale(${reducaoDeTamanho1024});
+    transform-origin: center;
+    margin-top: -10rem;
+  }
+  @media (max-width: 768px) {
+    transform: scale(${reducaoDeTamanho768});
+    transform-origin: center;
+    margin-top: -21rem; // Ajuste este valor conforme necessário
+  }
 `
 const GridBase = styled.div`
   border-radius: 2rem;
   background-color: ${(props) => props.theme['Secondary-Button']};
   box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
   width: 100%;
+  @media (max-width: 1024px) {
+  }
 `
 export const DivGrid0 = styled(GridBase)`
   grid-row-start: 1;
@@ -65,6 +86,8 @@ export const DivGrid0 = styled(GridBase)`
     font-size: 0.8em;
     width: 60%;
     text-align: center;
+  }
+  @media (max-width: 1024px) {
   }
 `
 export const WorkButton = styled.button`
