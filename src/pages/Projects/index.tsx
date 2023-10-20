@@ -34,7 +34,6 @@ import React, { useState, useEffect } from 'react'
 import Academia from '../../assets/FotoAcademia.jpg'
 import Bone from '../../assets/Bone.png'
 import Sorriso from '../../assets/Sorriso.png'
-
 import Estacio from '../../assets/EstacioLogo.png'
 import Discover from '../../assets/Discover.png'
 import Html from '../../assets/Html.png'

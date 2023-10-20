@@ -6,8 +6,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-inline: 4rem;
+  @media (max-width: 1024px) {
+    margin-inline: 2.2rem;
+  }
   @media (max-width: 768px) {
     margin-inline: 1.4rem;
+  }
+  @media (max-width: 425px) {
+    transform: scale(0.75);
+    justify-content: center;
   }
 `
 export const NavBar = styled.div`
@@ -54,7 +61,8 @@ export const NavButton = styled.button`
 `
 export const ContactButton = styled.button`
   border-style: solid;
-  background: linear-gradient(
+  background:
+    linear-gradient(
         ${(props) => props.theme['Secondary-Button']},
         ${(props) => props.theme['Secondary-Button']}
       )

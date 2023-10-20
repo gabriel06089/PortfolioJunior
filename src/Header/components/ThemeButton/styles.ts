@@ -64,8 +64,31 @@ export const Ball = styled.div<BallProps>`
       : css`
           ${moveLeft} 0.2s ease forwards
         `};
+  @media (max-width: 1024px) {
+    left: 3.5rem;
+    animation: ${({ move }) =>
+      move
+        ? css`
+            ${moveRight768} 0.2s ease forwards
+          `
+        : css`
+            ${moveLeft768} 0.2s ease forwards
+          `};
+  }
+
   @media (max-width: 768px) {
     left: 2.75rem;
+    animation: ${({ move }) =>
+      move
+        ? css`
+            ${moveRight768} 0.2s ease forwards
+          `
+        : css`
+            ${moveLeft768} 0.2s ease forwards
+          `};
+  }
+  @media (max-width: 425px) {
+    left: -4.2rem;
     animation: ${({ move }) =>
       move
         ? css`
