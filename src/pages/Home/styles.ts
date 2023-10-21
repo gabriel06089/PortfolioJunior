@@ -232,13 +232,6 @@ export const DivGrid1 = styled(GridBase)`
     grid-column-end: 1;
     height: 40rem;
   }
-  @media (max-width: 425px) {
-    grid-row-start: 5;
-    grid-column-start: 1;
-    grid-row-end: span 2; // Isso fará com que o elemento ocupe duas linhas
-    grid-column-end: 1;
-    height: 40rem;
-  }
 `
 export const ContainerAbsolute = styled.div`
   position: absolute;

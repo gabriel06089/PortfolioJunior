@@ -56,15 +56,15 @@ export const AngryGrid = styled.div`
   }
   @media (max-width: 605px) {
     transform: scale(88%);
-    margin-top: -12rem;
+    margin-top: -13rem;
   }
   @media (max-width: 567px) {
     transform: scale(80%);
-    margin-top: -20rem;
+    margin-top: -22.5rem;
   }
   @media (max-width: 519px) {
     transform: scale(76%);
-    margin-top: -25.3rem;
+    margin-top: -27.3rem;
   }
   @media (max-width: 495px) {
     transform: scale(72%);
@@ -392,14 +392,6 @@ export const DivGrid3 = styled(GridBase)`
     right: 0;
   }
   @media (max-width: 690px) {
-    grid-row-start: 3;
-    grid-column-start: 1;
-
-    grid-row-end: 3;
-    grid-column-end: 3;
-    height: 20rem;
-  }
-  @media (max-width: 425px) {
     grid-row-start: 3;
     grid-column-start: 1;
 
