@@ -7,13 +7,55 @@ export const Container = styled.div`
   justify-content: space-between;
   margin-inline: 4rem;
   @media (max-width: 1024px) {
-    margin-inline: 2.2rem;
+    margin-inline: 2.1rem;
   }
   @media (max-width: 768px) {
     margin-inline: 1.4rem;
   }
+  @media (max-width: 690px) {
+    transform: scale(1.068);
+  }
+  @media (max-width: 541px) {
+    transform: scale(1.04);
+    justify-content: center;
+  }
+  @media (max-width: 519px) {
+    transform: scale(1);
+    justify-content: center;
+  }
+  @media (max-width: 495px) {
+    transform: scale(0.95);
+    justify-content: center;
+  }
+  @media (max-width: 469px) {
+    transform: scale(0.9);
+    justify-content: center;
+  }
+  @media (max-width: 441px) {
+    transform: scale(0.845);
+    justify-content: center;
+  }
   @media (max-width: 425px) {
-    transform: scale(0.75);
+    transform: scale(0.8);
+    justify-content: center;
+  }
+
+  @media (max-width: 400px) {
+    transform: scale(0.76);
+  }
+
+  @media (max-width: 385px) {
+    transform: scale(0.72);
+  }
+  @media (max-width: 375px) {
+    transform: scale(0.72);
+  }
+  @media (max-width: 327px) {
+    transform: scale(0.63);
+    justify-content: center;
+  }
+  @media (max-width: 320px) {
+    transform: scale(0.62);
     justify-content: center;
   }
 `
@@ -35,6 +77,12 @@ export const NavBar = styled.div`
   span {
     font-weight: bold;
     color: ${(props) => props.theme.Primary};
+  }
+  @media (max-width: 690px) {
+    margin-left: 1rem;
+  }
+  @media (max-width: 425px) {
+    margin-left: 1rem;
   }
 `
 export const NavButton = styled.button`

@@ -3,10 +3,6 @@ interface PointIndexProps {
   active?: boolean
 }
 
-const reducaoDeTamanho1024 = '80%'
-const reducaoDeTamanho768 = '60%'
-const reducaoDeTamanho425 = '60%'
-
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -15,19 +11,6 @@ export const Container = styled.div`
   a {
     height: 100%;
     width: 100%;
-  }
-
-  @media (max-width: 1024px) {
-    transform: scale(${reducaoDeTamanho1024});
-    transform-origin: center;
-  }
-  @media (max-width: 425px) {
-    & {
-      padding: 0; // Remove o preenchimento
-    }
-    & > a {
-      height: 100%; // Define a altura para preencher a tela
-    }
   }
 `
 
@@ -38,29 +21,109 @@ export const AngryGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-inline: 5rem;
   gap: 1rem;
-  position: relative;
+  position: absolute;
   max-width: 100%;
   column-gap: 1.2rem;
   row-gap: 1.2rem;
-  margin-bottom: 80px;
 
   @media (max-width: 1024px) {
-    transform: scale(${reducaoDeTamanho1024});
+    transform: scale(80%);
     transform-origin: center;
     margin-top: -10rem;
+    padding-bottom: 5rem;
   }
   @media (max-width: 768px) {
-    transform: scale(${reducaoDeTamanho768});
+    transform: scale(60%);
     transform-origin: center;
     margin-top: -21rem; // Ajuste este valor conforme necessário
+    padding-bottom: 5rem;
   }
-  @media (max-width: 425px) {
-    transform: scale(${reducaoDeTamanho425});
+  @media (max-width: 690px) {
+    transform: scale(100%);
     transform-origin: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: -41rem; // Ajuste este valor conforme necessário
+    margin-top: 0.5rem; // Ajuste este valor conforme necessário
+  }
+  @media (max-width: 646px) {
+    transform: scale(95%);
+    transform-origin: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -5rem; // Ajuste este valor conforme necessário
     max-width: 100%;
+    padding-bottom: 5rem;
+  }
+  @media (max-width: 605px) {
+    transform: scale(88%);
+    margin-top: -12rem;
+  }
+  @media (max-width: 567px) {
+    transform: scale(80%);
+    margin-top: -20rem;
+  }
+  @media (max-width: 519px) {
+    transform: scale(76%);
+    margin-top: -25.3rem;
+  }
+  @media (max-width: 495px) {
+    transform: scale(72%);
+    margin-top: -29.3rem;
+  }
+  @media (max-width: 469px) {
+    transform: scale(68%);
+    margin-top: -33.5rem;
+  }
+  @media (max-width: 441px) {
+    transform: scale(64%);
+    margin-top: -37.8rem;
+  }
+  @media (max-width: 425px) {
+    transform: scale(60%);
+    transform-origin: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -42rem; // Ajuste este valor conforme necessário
+    max-width: 100%;
+    padding-bottom: 5rem;
+  }
+  @media (max-width: 400px) {
+    transform: scale(57.5%);
+    transform-origin: center;
+    margin-top: -44.5rem; // Ajuste conforme necessário
+  }
+
+  @media (max-width: 385px) {
+    transform: scale(55%);
+    transform-origin: center;
+    margin-top: -47.5rem; // Ajuste conforme necessário
+  }
+  @media (max-width: 375px) {
+    transform: scale(55%);
+    transform-origin: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -48rem; // Ajuste este valor conforme necessário
+    max-width: 100%;
+    padding-bottom: 5rem;
+  }
+  @media (max-width: 327px) {
+    transform: scale(48%);
+    transform-origin: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -55rem; // Ajuste este valor conforme necessário
+    max-width: 100%;
+    padding-bottom: 5rem;
+  }
+  @media (max-width: 320px) {
+    transform: scale(47%);
+    transform-origin: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -56rem; // Ajuste este valor conforme necessário
+    max-width: 100%;
+    padding-bottom: 5rem;
   }
 `
 const GridBase = styled.div`
@@ -68,8 +131,6 @@ const GridBase = styled.div`
   background-color: ${(props) => props.theme['Secondary-Button']};
   box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  @media (max-width: 1024px) {
-  }
 `
 export const DivGrid0 = styled(GridBase)`
   grid-row-start: 1;
@@ -105,6 +166,14 @@ export const DivGrid0 = styled(GridBase)`
     text-align: center;
   }
   @media (max-width: 425px) {
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 3;
+    height: 20rem;
+  }
+  @media (max-width: 690px) {
     grid-row-start: 1;
     grid-column-start: 1;
 
@@ -156,6 +225,13 @@ export const DivGrid1 = styled(GridBase)`
   align-items: center;
   justify-content: center;
   position: relative;
+  @media (max-width: 690px) {
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-row-end: span 2; // Isso fará com que o elemento ocupe duas linhas
+    grid-column-end: 1;
+    height: 40rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 5;
     grid-column-start: 1;
@@ -189,6 +265,18 @@ export const DivGrid2 = styled(GridBase)`
     width: 18.5rem;
     height: 100%;
     object-fit: cover;
+  }
+  @media (max-width: 690px) {
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 1;
+    height: 20rem;
+    img {
+      width: auto;
+      height: 100%;
+    }
   }
   @media (max-width: 425px) {
     grid-row-start: 2;
@@ -321,6 +409,14 @@ export const DivGrid3 = styled(GridBase)`
     top: 0;
     right: 0;
   }
+  @media (max-width: 690px) {
+    grid-row-start: 3;
+    grid-column-start: 1;
+
+    grid-row-end: 3;
+    grid-column-end: 3;
+    height: 20rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 3;
     grid-column-start: 1;
@@ -355,6 +451,13 @@ export const DivGrid4 = styled(GridBase)`
     margin-left: 2.5rem;
     opacity: 0.8;
     font-size: 0.8rem;
+  }
+  @media (max-width: 690px) {
+    grid-row-start: 6;
+    grid-column-start: 2;
+    grid-row-end: span 2;
+    grid-column-end: 2;
+    height: 40rem;
   }
   @media (max-width: 425px) {
     grid-row-start: 6;
@@ -403,6 +506,13 @@ export const DivGrid5 = styled(GridBase)`
 
   grid-row-end: 4;
   grid-column-end: 3;
+  @media (max-width: 690px) {
+    grid-row-start: 2;
+    grid-column-start: 2;
+
+    grid-row-end: 2;
+    grid-column-end: 2;
+  }
   @media (max-width: 425px) {
     grid-row-start: 2;
     grid-column-start: 2;
@@ -418,6 +528,13 @@ export const DivGrid6 = styled(GridBase)`
 
   grid-row-end: 4;
   grid-column-end: 5;
+  @media (max-width: 690px) {
+    grid-row-start: 4;
+    grid-column-start: 1;
+
+    grid-row-end: 4;
+    grid-column-end: 3;
+  }
   @media (max-width: 425px) {
     grid-row-start: 4;
     grid-column-start: 1;
@@ -453,6 +570,14 @@ export const LinkDivGrid7 = styled.a`
 
   grid-row-end: 5;
   grid-column-end: 3;
+  @media (max-width: 690px) {
+    grid-row-start: 5;
+    grid-column-start: 2;
+
+    grid-row-end: 5;
+    grid-column-end: 2;
+    height: 20rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 5;
     grid-column-start: 2;
@@ -469,6 +594,14 @@ export const DivGrid8 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 4;
+  @media (max-width: 690px) {
+    grid-row-start: 8;
+    grid-column-start: 1;
+
+    grid-row-end: 9;
+    grid-column-end: 1;
+    height: 40rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 8;
     grid-column-start: 1;
@@ -485,6 +618,14 @@ export const DivGrid9 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 5;
+  @media (max-width: 690px) {
+    grid-row-start: 8;
+    grid-column-start: 2;
+
+    grid-row-end: 9;
+    grid-column-end: 2;
+    height: 40rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 8;
     grid-column-start: 2;
@@ -529,6 +670,14 @@ export const LinkGrid10 = styled.a`
 
   grid-row-end: 6;
   grid-column-end: 2;
+  @media (max-width: 690px) {
+    grid-row-start: 7;
+    grid-column-start: 1;
+
+    grid-row-end: 7;
+    grid-column-end: 1;
+    height: 20rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 7;
     grid-column-start: 1;
@@ -579,6 +728,14 @@ export const LinkGrid11 = styled.a`
 
   grid-row-end: 6;
   grid-column-end: 3;
+  @media (max-width: 690px) {
+    grid-row-start: 9;
+    grid-column-start: 1;
+
+    grid-row-end: 9;
+    grid-column-end: 3;
+    height: 20rem;
+  }
   @media (max-width: 425px) {
     grid-row-start: 9;
     grid-column-start: 1;

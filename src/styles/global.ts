@@ -15,7 +15,8 @@ body{
     color: ${(props) => props.theme.Primary};
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.9s ease;
-    min-height: 100vh;
+    
+    
     
 }
 
