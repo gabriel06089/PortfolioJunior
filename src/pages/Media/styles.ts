@@ -127,7 +127,7 @@ export const AngryGrid = styled.div`
     transform-origin: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: -56rem; // Ajuste este valor conforme necessário
+    margin-top: -58rem; // Ajuste este valor conforme necessário
     max-width: 100%;
     padding-bottom: 5rem;
   }
@@ -497,7 +497,7 @@ export const DivGrid6 = styled(GridBase)`
     grid-row-start: 3;
     grid-column-start: 1;
 
-    grid-row-end:3;
+    grid-row-end: 3;
     grid-column-end: 3;
     height: 20rem;
   }
@@ -522,7 +522,6 @@ export const DivGrid7 = styled(GridBase)`
     height: 7rem;
     width: 7rem;
   }
-  
 `
 export const LinkDivGrid7 = styled.a`
   grid-row-start: 1;
@@ -595,7 +594,6 @@ export const DivGrid10 = styled(GridBase)`
     color: white;
     z-index: 99;
   }
-  
 `
 export const LinkGrid10 = styled.a`
   grid-row-start: 2;

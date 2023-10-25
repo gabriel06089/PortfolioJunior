@@ -68,42 +68,42 @@ export const AngryGrid = styled.div`
   }
   @media (max-width: 495px) {
     transform: scale(72%);
-    margin-top: -29.3rem;
+    margin-top: -31.7rem;
   }
   @media (max-width: 469px) {
     transform: scale(68%);
-    margin-top: -33.5rem;
+    margin-top: -36.7rem;
   }
   @media (max-width: 441px) {
     transform: scale(64%);
-    margin-top: -37.8rem;
+    margin-top: -41.4rem;
   }
   @media (max-width: 425px) {
     transform: scale(60%);
     transform-origin: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: -42rem; // Ajuste este valor conforme necessário
+    margin-top: -46.2rem; // Ajuste este valor conforme necessário
     max-width: 100%;
     padding-bottom: 5rem;
   }
   @media (max-width: 400px) {
     transform: scale(57.5%);
     transform-origin: center;
-    margin-top: -44.5rem; // Ajuste conforme necessário
+    margin-top: -49rem; // Ajuste conforme necessário
   }
 
   @media (max-width: 385px) {
     transform: scale(55%);
     transform-origin: center;
-    margin-top: -47.5rem; // Ajuste conforme necessário
+    margin-top: -51.9rem; // Ajuste conforme necessário
   }
   @media (max-width: 375px) {
     transform: scale(55%);
     transform-origin: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: -48rem; // Ajuste este valor conforme necessário
+    margin-top: -52rem; // Ajuste este valor conforme necessário
     max-width: 100%;
     padding-bottom: 5rem;
   }
@@ -121,7 +121,7 @@ export const AngryGrid = styled.div`
     transform-origin: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: -56rem; // Ajuste este valor conforme necessário
+    margin-top: -61rem; // Ajuste este valor conforme necessário
     max-width: 100%;
     padding-bottom: 5rem;
   }
