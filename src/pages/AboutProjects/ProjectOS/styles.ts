@@ -26,8 +26,16 @@ export const Container = styled.div`
   justify-content: center;
   margin-inline: 5rem;
   margin-top: 2rem;
+
   h1 {
     margin-bottom: 1rem;
+  }
+  @media (max-width: 664px) {
+    margin-inline: 0rem;
+    margin-top: 0rem;
+    h1 {
+      font-size: 1.6rem;
+    }
   }
 `
 
@@ -42,6 +50,16 @@ export const ImgContainer = styled.div`
     max-width: 100%;
     height: auto;
   }
+  @media (max-width: 664px) {
+    margin-inline: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    img {
+      border-radius: 16px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
 `
 
 export const StackContainer = styled.div`
@@ -53,6 +71,14 @@ export const StackContainer = styled.div`
     max-width: 100%;
     max-height: 4rem;
     object-fit: contain;
+
+    @media (max-width: 1100px) {
+      height: 6vw; // A altura será 3% da largura da viewport
+      max-height: auto;
+    }
+    @media (max-width: 664px) {
+      height: 6.5vw;
+    }
   }
 `
 
@@ -117,6 +143,10 @@ const BaseBall = styled.div`
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 100%;
+  @media (max-width: 664px) {
+    height: 1rem;
+    width: 1rem;
+  }
 `
 export const BallContainer = styled.div`
   display: flex;
@@ -125,6 +155,9 @@ export const BallContainer = styled.div`
   align-items: center;
   position: absolute;
   left: 0;
+  @media (max-width: 664px) {
+    gap: 0.5rem;
+  }
 `
 export const RedBall = styled(BaseBall)`
   background-color: #fb6058;
@@ -155,7 +188,6 @@ export const TerminalBar = styled.div`
 `
 export const TerminalContainer = styled.div`
   display: flex;
-
   margin-bottom: 5rem;
   flex-direction: column;
   width: 80%;
@@ -166,7 +198,7 @@ export const TerminalContainer = styled.div`
   background-color: ${(props) => props.theme['Secondary-Button']};
   p {
     margin-block: 1rem;
-    font-size: 2rem;
+
     position: relative;
     z-index: 1;
     font-family: 'Roboto';
@@ -182,6 +214,17 @@ export const TerminalContainer = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
     position: relative;
+  }
+  @media (max-width: 664px) {
+    margin-bottom: 2rem;
+    width: 88%;
+    span {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
   }
 `
 const blinkAnimation = keyframes`

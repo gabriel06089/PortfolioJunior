@@ -1,11 +1,38 @@
 import styled, { keyframes } from 'styled-components'
 
+const breakpoints = [900, 768, 664, 630, 616, 600, 570, 520, 500, 460, 425]
+const scales = [1, 0.9, 0.9, 0.85, 0.8, 0.78, 0.7, 0.68, 0.64, 0.58, 0.56]
+
+const generateMediaQueries = (breakpoints: string | any[], scales: any[]) => {
+  let mediaQueries = ''
+  for (let i = 0; i < breakpoints.length; i++) {
+    mediaQueries += `
+      @media (max-width: ${breakpoints[i]}px) {
+        transform: scale(${scales[i]});
+      }
+    `
+  }
+  return mediaQueries
+}
+
 export const Container = styled.div`
   padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-inline: 4rem;
+
+  ${generateMediaQueries(breakpoints, scales)}
+
+  @media (max-width: 768px) {
+    margin-inline: auto;
+    justify-content: center;
+  }
+
+  @media (max-width: 664px) {
+    padding-block: 16px;
+    padding-inline: 0px;
+  }
 `
 export const NavBar = styled.div`
   display: flex;
@@ -16,7 +43,7 @@ export const NavBar = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
 
   box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
   background-color: ${(props) => props.theme['Secondary-Button']};
@@ -51,7 +78,8 @@ export const NavButton = styled.button`
 `
 export const ContactButton = styled.button`
   border-style: solid;
-  background: linear-gradient(
+  background:
+    linear-gradient(
         ${(props) => props.theme['Secondary-Button']},
         ${(props) => props.theme['Secondary-Button']}
       )

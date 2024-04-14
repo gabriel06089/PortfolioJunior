@@ -123,7 +123,6 @@ export const ContactButton = styled.button`
       border-box;
   border-radius: 100px;
   border: 2.5px solid transparent;
-
   padding: 0.5rem 0.8rem;
   span {
     font-weight: bold;

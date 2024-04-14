@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Container, InfoContainer, NavBar, NavButton, Title } from './styles'
 
 export function DashBoard() {
@@ -69,7 +69,7 @@ export function DashBoard() {
             onClick={() => handleNavButtonClick('Delivery')}
             selected={selectedValue === 'Delivery'}
           >
-            <span>Delivery</span>
+            <span>PlusFM</span>
           </NavButton>
 
           <NavButton
@@ -110,15 +110,15 @@ export function DashBoard() {
                 <br /> TypeScript
               </h1>
               <p>Frameworks / Bibliotecas</p>
-              <h1>React</h1>
+              <h1>React, React Native</h1>
               <p>Biblioteca de Estilização</p>
-              <h1>styled-components</h1>
+              <h1>Css Puro, styled-components</h1>
               <p>Controle de Versão</p>
               <h1>Git</h1>
               <p>Linter</p>
-              <h1>ESLint</h1>
+              <h1>Prettier +</h1>
               <p>Editor de Código</p>
-              <h1>VS Code</h1>
+              <h1>VS Code, Xcode</h1>
             </>
           )}
           {selectedValue === 'LP' && (
@@ -146,15 +146,15 @@ export function DashBoard() {
               <p>Linguagens de Programação</p>
               <h1>HTML, CSS, JavaScript, TypeScript</h1>
               <p>Frameworks / Bibliotecas</p>
-              <h1>React</h1>
+              <h1>React, React Native</h1>
               <p>Biblioteca de Estilização</p>
-              <h1>styled-components, Module CSS</h1>
+              <h1>styled-components, Module CSS, CSS Puro</h1>
               <p>Controle de Versão</p>
               <h1>Git</h1>
               <p>Linter</p>
-              <h1>ESLint</h1>
+              <h1>ESLint, Prettier +</h1>
               <p>Editor de Código</p>
-              <h1>VS Code</h1>
+              <h1>VS Code, Xcode</h1>
             </>
           )}
         </InfoContainer>

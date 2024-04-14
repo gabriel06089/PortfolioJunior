@@ -215,10 +215,10 @@ export function Projects() {
           <ProjectDisplayPort />
         </DivGrid8>
         <DivGridExtra>
-          <ProjectDisplayCD />
+          <ProjectDisplayLP />
         </DivGridExtra>
         <DivGrid9>
-          <ProjectDisplayLP />
+          <ProjectDisplayCD />
         </DivGrid9>
         <LinkGrid10 href="www.linkedin.com/in/gabriel-alves-araujo0608">
           <DivGrid10>

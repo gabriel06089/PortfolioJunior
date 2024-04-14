@@ -180,6 +180,19 @@ export const DivGrid0 = styled(GridBase)`
     grid-row-end: 2;
     grid-column-end: 3;
     height: 20rem;
+    h1 {
+      font-size: 4em;
+    }
+
+    span {
+      font-size: 1.5em;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 1em;
+      width: 100%;
+      text-align: center;
+    }
   }
 `
 export const WorkButton = styled.button`
@@ -201,7 +214,7 @@ export const WorkButton = styled.button`
   border-radius: 100px;
   border: 2px solid transparent;
   box-shadow: 1px 2px 5px ${(props) => props.theme.Secondary};
-  padding: 0.3rem 0.8rem;
+  padding: 0.5rem 0.8rem;
   transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.02);
@@ -211,6 +224,11 @@ export const WorkButton = styled.button`
     font-weight: bold;
     font-size: 1em;
     color: ${(props) => props.theme.Primary};
+  }
+  @media (max-width: 600px) {
+    border-radius: 100px;
+    border: 2.5px solid transparent;
+    font-size: 1rem;
   }
 `
 

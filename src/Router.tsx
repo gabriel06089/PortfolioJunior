@@ -8,6 +8,7 @@ import { ProjectDefaultLayout } from './ProjectsLayout'
 import { ProjectAboutOS } from './pages/AboutProjects/ProjectOS'
 import { ProjectAboutCD } from './pages/AboutProjects/ProjectCD'
 import { ProjectAboutLP } from './pages/AboutProjects/ProjectLP'
+import { ProjectAboutFM } from './pages/AboutProjects/ProjectFM'
 
 export function Router() {
   return (
@@ -22,6 +23,7 @@ export function Router() {
         <Route path="/aboutProjects/projectOS" element={<ProjectAboutOS />} />
         <Route path="/aboutProjects/projectCD" element={<ProjectAboutCD />} />
         <Route path="/aboutProjects/projectLP" element={<ProjectAboutLP />} />
+        <Route path="/aboutProjects/projectFM" element={<ProjectAboutFM />} />
       </Route>
     </Routes>
   )

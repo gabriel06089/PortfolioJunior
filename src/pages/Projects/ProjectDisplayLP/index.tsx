@@ -6,12 +6,12 @@ import {
   ImgContainer,
   Title,
 } from './styles'
-import Cafe from '../../../assets/cafe.png'
+import Cafe from '../../../assets/PLusFM.png'
 import Type from '../../../assets/Typescript.png'
 import CSS from '../../../assets/Css.svg'
 import Styled from '../../../assets/styled.png'
 import React from '../../../assets/ReactLogoClean.png'
-import Vite from '../../../assets/Vite.svg'
+import Java from '../../../assets/Javascript.svg'
 
 import { Link } from 'react-router-dom'
 export function ProjectDisplayCD() {
@@ -19,7 +19,7 @@ export function ProjectDisplayCD() {
     <Container>
       <Title>
         <span>PROJETO</span>
-        <h1>Cofee Delivery</h1>
+        <h1>Plus FM</h1>
       </Title>
       <ContainerName>
         <span>STACK TECNOLÓGICO</span>
@@ -27,7 +27,7 @@ export function ProjectDisplayCD() {
           <img src={Type} alt="" />
           <img src={CSS} alt="" />
           <img src={React} alt="" />
-          <img src={Vite} alt="" />
+          <img src={Java} alt="" />
           <img src={Styled} alt="" />
         </ImgContainer>
       </ContainerName>
@@ -41,7 +41,7 @@ export function ProjectDisplayCD() {
         </ButtonView>
       </a>
 
-      <Link to="/aboutProjects/projectCD">
+      <Link to="/aboutProjects/projectFM">
         <p>Sobre o Projeto</p>
       </Link>
     </Container>

@@ -176,6 +176,18 @@ export const DivGrid0 = styled(GridBase)`
     grid-row-end: 3;
     grid-column-end: 3;
     height: 20rem;
+    h1 {
+      font-size: 4em;
+    }
+
+    span {
+      font-size: 2.2em;
+    }
+    p {
+      font-size: 1em;
+      width: 100%;
+      text-align: center;
+    }
   }
 `
 export const WorkButton = styled.button`
@@ -207,6 +219,9 @@ export const WorkButton = styled.button`
     font-weight: bold;
     font-size: 1em;
     color: ${(props) => props.theme.Primary};
+  }
+  @media (max-width: 600px) {
+    font-size: 1.5em;
   }
 `
 
@@ -347,7 +362,7 @@ export const PointIndex = styled.div<PointIndexProps>`
 `
 
 export const DivGrid3 = styled(GridBase)`
-  grid-row-start: 1;
+  grid-row-start: 6;
   grid-column-start: 2;
 
   grid-row-end: 5;

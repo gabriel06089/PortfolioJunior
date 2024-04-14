@@ -5,7 +5,6 @@ import {
   ArrowPhotoButton1,
   ArrowPhotoButton2,
   Container,
-  ContainerAbsolute,
   ContainerIndex,
   DivGrid0,
   DivGrid1,
@@ -63,6 +62,7 @@ import { Future } from './Components/Future'
 import { Music } from './Components/Music'
 import { ProjectDisplayPort } from './Components/ProjectDisplayPort'
 import { ProjectDisplayLP } from './Components/ProjectDisplayLP'
+import { ProjectDisplayCD } from '../Projects/ProjectDisplayLP'
 
 export function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -211,7 +211,7 @@ export function Home() {
           <ProjectDisplayPort />
         </DivGrid8>
         <DivGrid9>
-          <ProjectDisplayLP />
+          <ProjectDisplayCD />
         </DivGrid9>
         <LinkGrid10 href="www.linkedin.com/in/gabriel-alves-araujo0608">
           <DivGrid10>

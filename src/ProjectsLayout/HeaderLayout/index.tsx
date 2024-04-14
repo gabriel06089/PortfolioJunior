@@ -20,6 +20,9 @@ export function HeaderProjects() {
   const handleProjectsLPClick = () => {
     navigate('/aboutProjects/projectLP')
   }
+  const handleProjectsFMClick = () => {
+    navigate('/aboutProjects/projectFM')
+  }
   return (
     <Container>
       <ThemeButton />
@@ -44,7 +47,7 @@ export function HeaderProjects() {
           }
           onClick={handleProjectsCDClick}
         >
-          <span>Coffee Delivery</span>
+          <span>Delivery</span>
         </NavButton>
         <NavButton
           className={
@@ -53,6 +56,14 @@ export function HeaderProjects() {
           onClick={handleProjectsLPClick}
         >
           <span>LandingPage</span>
+        </NavButton>
+        <NavButton
+          className={
+            location.pathname === '/aboutProjects/projectFM' ? 'selected' : ''
+          }
+          onClick={handleProjectsFMClick}
+        >
+          <span>PlusFM</span>
         </NavButton>
       </NavBar>
       <ContactButton>
