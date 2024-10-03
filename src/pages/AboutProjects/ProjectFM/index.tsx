@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 import {
   Container,
@@ -13,30 +13,31 @@ import {
   GreenBall,
   YellowBall,
   BlinkCursor,
-} from './styles'
-import PlusFM from '../../../assets/PlusFM.png'
-import Type from '../../../assets/Typescript.png'
-import Css from '../../../assets/Css.svg'
-import Java from '../../../assets/Javascript.svg'
-import PlayStore from '../../../assets/playStore.png'
-import AppStore from '../../../assets/appStore.png'
-import WordPress from '../../../assets/WordPress.png'
-import Styled from '../../../assets/styled.png'
-
-import Git from '../../../assets/GitHub-transformed.png'
-import ReactLogo from '../../../assets/ReactLogoClean.png'
-import Netlify from '../../../assets/netlify-logo-png-transparent.png'
+  StyledLink,
+} from "./styles";
+import PlusFM from "../../../assets/PlusFM.png";
+import Type from "../../../assets/Typescript.png";
+import Css from "../../../assets/Css.svg";
+import Java from "../../../assets/Javascript.svg";
+import PlayStore from "../../../assets/playStore.png";
+import AppStore from "../../../assets/appStore.png";
+import WordPress from "../../../assets/WordPress.png";
+import Styled from "../../../assets/styled.png";
+import Php from "../../../assets/PHP.png";
+import Git from "../../../assets/GitHub-transformed.png";
+import ReactLogo from "../../../assets/ReactLogoClean.png";
+import Netlify from "../../../assets/netlify-logo-png-transparent.png";
 
 export function ProjectAboutFM() {
   const [starCoordinates, setStarCoordinates] = useState<
     { id: number; top: number; left: number }[]
-  >([])
+  >([]);
 
-  const topRange = 35
-  const leftRange = 250
+  const topRange = 35;
+  const leftRange = 250;
 
   useEffect(() => {
-    const numberOfStars = 1
+    const numberOfStars = 1;
 
     const interval = setInterval(() => {
       const coordinates: { id: number; top: number; left: number }[] =
@@ -44,13 +45,13 @@ export function ProjectAboutFM() {
           id: index,
           top: Math.floor(Math.random() * (topRange + 1)) - 15,
           left: Math.floor(Math.random() * (leftRange + 1)) - 30,
-        }))
-      setStarCoordinates(coordinates)
-    }, 700)
+        }));
+      setStarCoordinates(coordinates);
+    }, 700);
     return () => {
-      clearInterval(interval)
-    }
-  }, [])
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <Container>
@@ -61,7 +62,7 @@ export function ProjectAboutFM() {
             <div
               key={star.id}
               style={{
-                position: 'absolute',
+                position: "absolute",
                 top: star.top,
                 left: star.left,
               }}
@@ -90,6 +91,7 @@ export function ProjectAboutFM() {
         <img src={AppStore} alt="" />
         <img src={PlayStore} alt="" />
         <img src={WordPress} alt="" />
+        <img src={Php} alt="" />
       </StackContainer>
 
       <TerminalContainer>
@@ -101,19 +103,24 @@ export function ProjectAboutFM() {
           </BallContainer>
 
           <span>
-            <span>Sobre </span>{' '}
+            <span>Sobre </span>{" "}
           </span>
         </TerminalBar>
         <p>
-          Meu portfólio é uma peça fundamental para mostrar quem sou e o que sou
-          capaz de fazer. É como um reflexo digital do meu trabalho e paixão
-          pela minha área. Nele, compartilho meus projetos mais incríveis,
-          colocando minha criatividade e habilidades em destaque. Cada elemento
-          foi cuidadosamente selecionado para transmitir minha personalidade e
-          estilo único. Meu portfólio é uma representação autêntica do meu
-          percurso e conquistas, e me enche de orgulho poder compartilhá-lo com
-          o mundo. É a minha maneira de mostrar ao mercado o que posso oferecer
-          e abrir as portas para novas e emocionantes oportunidades.
+          Meu primeiro projeto foi a revitalização de um site antigo (veja no
+          <StyledLink
+            href="https://web.archive.org/web/20231130174254/https://www.plusfm.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            &nbsp;Wayback Machine
+          </StyledLink>
+          ). O objetivo foi trazer novidades e modificações para a plataforma,
+          com um foco especial em integrar todas as rádios da rede,
+          conectando-as aos municípios onde atuam. Além disso, o aplicativo da
+          rádio foi refeito do zero, modernizando a experiência para os
+          usuários. O site também incluiu um pequeno blog de entretenimento e
+          programas da rádio, ampliando o conteúdo de forma inovadora.
           <BlinkCursor />
         </p>
       </TerminalContainer>
@@ -129,13 +136,15 @@ export function ProjectAboutFM() {
           <span> Personalidade </span>
         </TerminalBar>
         <p>
-          Meu portfólio é construído com foco na transmissão de uma imagem
-          profissional distinta. Cada elemento, desde a seleção de projetos até
-          o design e layout, é cuidadosamente escolhido para destacar minhas
-          habilidades e competências. Com uma abordagem estratégica e criativa,
-          meu portfólio oferece uma visão autêntica da minha personalidade
-          profissional, mostrando meu estilo único e capacidade de entregar
-          resultados excepciona
+          Este foi meu primeiro projeto: a revitalização de um site antigo (veja
+          no Wayback Machine). O objetivo foi trazer novidades e modificações
+          para a plataforma, com um foco especial em integrar todas as rádios da
+          rede, conectando-as aos municípios onde atuam. Além disso, o
+          aplicativo da rádio foi refeito do zero, modernizando a experiência
+          para os usuários. O site também incluiu um pequeno blog de
+          entretenimento e programas da rádio, ampliando o conteúdo de forma
+          inovadora." Isso torna o texto mais pessoal e destaca a importância do
+          projeto na sua trajetória
           <BlinkCursor />
         </p>
       </TerminalContainer>
@@ -161,5 +170,5 @@ export function ProjectAboutFM() {
         </p>
       </TerminalContainer>
     </Container>
-  )
+  );
 }

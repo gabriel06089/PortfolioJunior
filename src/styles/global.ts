@@ -14,7 +14,7 @@ body{
     background: ${(props) => props.theme.Secondary};
     color: ${(props) => props.theme.Primary};
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.9s ease;
+    /* transition: background-color 0.9s ease; */
     
     
     

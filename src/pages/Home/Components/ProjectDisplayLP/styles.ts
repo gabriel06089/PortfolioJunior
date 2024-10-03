@@ -27,7 +27,7 @@ export const ContainerPort = styled.div`
 
   img {
     height: 20.5rem;
-    width: 14.5rem;
+    width: 100%;
     object-fit: cover;
     object-position: 74%;
     border-radius: 16px;

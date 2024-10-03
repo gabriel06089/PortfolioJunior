@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 export const Container = styled.div`
   margin-inline: 2rem;
   display: flex;
@@ -8,7 +8,9 @@ export const Container = styled.div`
   p {
     font-weight: bold;
     letter-spacing: -1px;
-    transition: transform 0.3s, opacity 0.1s ease;
+    transition:
+      transform 0.3s,
+      opacity 0.1s ease;
     &:hover {
       opacity: 0.9;
       transform: scale(1.02);
@@ -18,7 +20,7 @@ export const Container = styled.div`
     text-decoration: none;
     color: inherit;
   }
-`
+`;
 export const ContainerPort = styled.div`
   display: flex;
   align-items: center;
@@ -27,15 +29,15 @@ export const ContainerPort = styled.div`
 
   img {
     height: 20.5rem;
-    width: 14.5rem;
+    width: 100%;
     object-fit: cover;
-    object-position: 96%;
+    object-position: 50%;
     border-radius: 16px;
   }
-`
+`;
 export const ContainerName = styled.div`
   align-self: start;
-
+  margin-bottom: 1rem;
   img {
     height: 2.5rem;
     width: 2.8rem;
@@ -46,15 +48,15 @@ export const ContainerName = styled.div`
 
     letter-spacing: -0.5px;
   }
-`
+`;
 export const ImgContainer = styled.div`
   display: flex;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-`
+`;
 export const Title = styled.div`
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   align-self: flex-start;
   span {
     opacity: 0.5;
@@ -64,7 +66,7 @@ export const Title = styled.div`
     margin-top: 0.2rem;
     font-size: 1.8rem;
   }
-`
+`;
 export const ButtonView = styled.div`
   border-style: solid;
   background-color: ${(props) => props.theme.Secondary};
@@ -73,14 +75,16 @@ export const ButtonView = styled.div`
 
   padding: 0.8rem 1rem;
   margin-block: 1rem;
-  transition: transform 0.3s, opacity 0.1s ease;
+  transition:
+    transform 0.3s,
+    opacity 0.1s ease;
   &:hover {
     opacity: 0.9;
     transform: scale(1.02);
   }
   span {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-weight: bold;
     color: ${(props) => props.theme.Primary};
   }
-`
+`;

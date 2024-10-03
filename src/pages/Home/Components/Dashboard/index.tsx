@@ -1,50 +1,50 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect } from 'react'
-import { Container, InfoContainer, NavBar, NavButton, Title } from './styles'
+import { useState, useEffect } from "react";
+import { Container, InfoContainer, NavBar, NavButton, Title } from "./styles";
 
 export function DashBoard() {
-  const [selectedValue, setSelectedValue] = useState('GaOS')
-  const [disableAutoToggle, setDisableAutoToggle] = useState(false)
+  const [selectedValue, setSelectedValue] = useState("GaOS");
+  const [disableAutoToggle, setDisableAutoToggle] = useState(false);
 
   const handleNavButtonClick = (value: string) => {
-    setSelectedValue(value)
-    setDisableAutoToggle(true)
-  }
+    setSelectedValue(value);
+    setDisableAutoToggle(true);
+  };
 
   useEffect(() => {
     if (!disableAutoToggle) {
       const timer = setInterval(() => {
         setSelectedValue((prevValue) => {
           switch (prevValue) {
-            case 'GaOS':
-              return 'LP'
-            case 'LP':
-              return 'Delivery'
-            case 'Delivery':
-              return 'Todos'
-            case 'Todos':
-              return 'GaOS'
+            case "GaOS":
+              return "LP";
+            case "LP":
+              return "Delivery";
+            case "Delivery":
+              return "Todos";
+            case "Todos":
+              return "GaOS";
             default:
-              return prevValue
+              return prevValue;
           }
-        })
-      }, 5000)
+        });
+      }, 5000);
 
       return () => {
-        clearInterval(timer)
-      }
+        clearInterval(timer);
+      };
     }
-  }, [disableAutoToggle])
+  }, [disableAutoToggle]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setDisableAutoToggle(false)
-    }, 10000)
+      setDisableAutoToggle(false);
+    }, 10000);
 
     return () => {
-      clearTimeout(timeout)
-    }
-  }, [selectedValue])
+      clearTimeout(timeout);
+    };
+  }, [selectedValue]);
 
   return (
     <>
@@ -54,33 +54,33 @@ export function DashBoard() {
         </Title>
         <NavBar>
           <NavButton
-            onClick={() => handleNavButtonClick('GaOS')}
-            selected={selectedValue === 'GaOS'}
+            onClick={() => handleNavButtonClick("GaOS")}
+            selected={selectedValue === "GaOS"}
           >
             <span>GaOS</span>
           </NavButton>
           <NavButton
-            onClick={() => handleNavButtonClick('LP')}
-            selected={selectedValue === 'LP'}
+            onClick={() => handleNavButtonClick("LP")}
+            selected={selectedValue === "LP"}
           >
             <span>LP</span>
           </NavButton>
           <NavButton
-            onClick={() => handleNavButtonClick('Delivery')}
-            selected={selectedValue === 'Delivery'}
+            onClick={() => handleNavButtonClick("Delivery")}
+            selected={selectedValue === "Delivery"}
           >
             <span>PlusFM</span>
           </NavButton>
 
           <NavButton
-            onClick={() => handleNavButtonClick('Todos')}
-            selected={selectedValue === 'Todos'}
+            onClick={() => handleNavButtonClick("Todos")}
+            selected={selectedValue === "Todos"}
           >
             <span>Todos</span>
           </NavButton>
         </NavBar>
         <InfoContainer>
-          {selectedValue === 'GaOS' && (
+          {selectedValue === "GaOS" && (
             <>
               <p>Linguagens de Programação</p>
               <h1>
@@ -101,11 +101,11 @@ export function DashBoard() {
             </>
           )}
 
-          {selectedValue === 'Delivery' && (
+          {selectedValue === "Delivery" && (
             <>
               <p>Linguagens de Programação</p>
               <h1>
-                HTML, CSS,
+                HTML, CSS, PHP
                 <br /> JavaScript,
                 <br /> TypeScript
               </h1>
@@ -121,7 +121,7 @@ export function DashBoard() {
               <h1>VS Code, Xcode</h1>
             </>
           )}
-          {selectedValue === 'LP' && (
+          {selectedValue === "LP" && (
             <>
               <p>Linguagens de Programação</p>
               <h1>
@@ -141,10 +141,10 @@ export function DashBoard() {
               <h1>VS Code</h1>
             </>
           )}
-          {selectedValue === 'Todos' && (
+          {selectedValue === "Todos" && (
             <>
               <p>Linguagens de Programação</p>
-              <h1>HTML, CSS, JavaScript, TypeScript</h1>
+              <h1>HTML, CSS, PHP, JavaScript, TypeScript</h1>
               <p>Frameworks / Bibliotecas</p>
               <h1>React, React Native</h1>
               <p>Biblioteca de Estilização</p>
@@ -160,5 +160,5 @@ export function DashBoard() {
         </InfoContainer>
       </Container>
     </>
-  )
+  );
 }

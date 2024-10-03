@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components'
-import React, { useState, useEffect } from 'react'
-import { StarFour } from 'phosphor-react'
+import styled, { keyframes } from "styled-components";
+import React, { useState, useEffect } from "react";
+import { StarFour } from "phosphor-react";
 const scaleAndRotateAnimation = keyframes`
   0% {
     transform: scale(0) rotate(0deg);
@@ -14,9 +14,9 @@ const scaleAndRotateAnimation = keyframes`
     transform: scale(0) rotate(180deg);
     opacity: 0;
   }
-`
+`;
 interface IBlurTextProps {
-  isHovered: boolean
+  isHovered: boolean;
 }
 
 export const Container = styled.div`
@@ -37,7 +37,7 @@ export const Container = styled.div`
       font-size: 1.6rem;
     }
   }
-`
+`;
 
 export const ImgContainer = styled.div`
   margin: 4rem;
@@ -60,7 +60,7 @@ export const ImgContainer = styled.div`
       height: auto;
     }
   }
-`
+`;
 
 export const StackContainer = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ export const StackContainer = styled.div`
       height: 6.5vw;
     }
   }
-`
+`;
 
 export const BlurText = styled.span<IBlurTextProps>`
   border-radius: 100px;
@@ -89,8 +89,8 @@ export const BlurText = styled.span<IBlurTextProps>`
   }
   transition: filter 0.3s ease;
 
-  filter: ${(props) => (props.isHovered ? 'none' : 'blur(5px)')};
-`
+  filter: ${(props) => (props.isHovered ? "none" : "blur(5px)")};
+`;
 export const CursorCircle = styled.div<{ mouseX: number; mouseY: number }>`
   position: fixed;
   top: ${({ mouseY }) => `${mouseY}px`};
@@ -103,7 +103,7 @@ export const CursorCircle = styled.div<{ mouseX: number; mouseY: number }>`
   z-index: 9999;
   border: 1px solid white;
   transform: translate(-50%, -50%);
-`
+`;
 const gradientAnimation = keyframes`
   0% {
     background-position: 0% center;
@@ -111,7 +111,7 @@ const gradientAnimation = keyframes`
   to {
     background-position: -200% center;
   }
-`
+`;
 export const AnimatedText = styled.span`
   animation: ${gradientAnimation} 3s linear infinite;
   background: linear-gradient(
@@ -126,19 +126,19 @@ export const AnimatedText = styled.span`
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
   position: relative;
-`
+`;
 export const TwinklingStar = styled(StarFour)`
   position: absolute;
   color: ${(props) => props.theme.UltraContrast};
   animation: ${scaleAndRotateAnimation} 700ms ease infinite;
   transform-origin: center;
-`
+`;
 export const TwinklingStar2 = styled(StarFour)`
   position: absolute;
   color: ${(props) => props.theme.UltraContrast};
   animation: ${scaleAndRotateAnimation} 700ms ease infinite;
   transform-origin: center;
-`
+`;
 const BaseBall = styled.div`
   height: 1.5rem;
   width: 1.5rem;
@@ -147,7 +147,7 @@ const BaseBall = styled.div`
     height: 1rem;
     width: 1rem;
   }
-`
+`;
 export const BallContainer = styled.div`
   display: flex;
   margin-inline: 1rem;
@@ -158,16 +158,16 @@ export const BallContainer = styled.div`
   @media (max-width: 664px) {
     gap: 0.5rem;
   }
-`
+`;
 export const RedBall = styled(BaseBall)`
   background-color: #fb6058;
-`
+`;
 export const GreenBall = styled(BaseBall)`
   background-color: #28c73f;
-`
+`;
 export const YellowBall = styled(BaseBall)`
   background-color: #fbbb31;
-`
+`;
 
 export const TerminalBar = styled.div`
   display: flex;
@@ -185,7 +185,7 @@ export const TerminalBar = styled.div`
     height: 2rem;
     margin-right: 0.5rem;
   }
-`
+`;
 export const TerminalContainer = styled.div`
   display: flex;
   margin-bottom: 5rem;
@@ -195,13 +195,13 @@ export const TerminalContainer = styled.div`
   border-radius: 1rem;
 
   box-shadow: 5px solid black;
-  background-color: ${(props) => props.theme['Secondary-Button']};
+  background-color: ${(props) => props.theme["Secondary-Button"]};
   p {
     margin-block: 1rem;
 
     position: relative;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     text-align: start;
     margin: 1rem;
     font-size: 1rem;
@@ -226,13 +226,13 @@ export const TerminalContainer = styled.div`
       line-height: 1.8;
     }
   }
-`
+`;
 const blinkAnimation = keyframes`
   0% { opacity: 1; }
   50% { opacity: 1; }
   51% { opacity: 0; }
   100% { opacity: 0; }
-`
+`;
 export const BlinkCursor = styled.span`
   display: inline-block;
   width: 2px;
@@ -240,4 +240,18 @@ export const BlinkCursor = styled.span`
   margin-left: 1px;
   background-color: ${(props) => props.theme.Primary};
   animation: ${blinkAnimation} 1s steps(1) infinite;
-`
+`;
+export const StyledLink = styled.a`
+  color: ${(props) => props.theme.Contrast};
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: ${(props) => props.theme.UltraContrast};
+  }
+`;

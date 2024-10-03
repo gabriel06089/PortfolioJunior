@@ -29,87 +29,87 @@ import {
   SVG2,
   WorkButton,
   DivGridExtra,
-} from './styles'
-import React, { useState, useEffect } from 'react'
-import Academia from '../../assets/FotoAcademia.jpg'
-import Bone from '../../assets/Bone.png'
-import Sorriso from '../../assets/Sorriso.png'
-import Estacio from '../../assets/EstacioLogo.png'
-import Discover from '../../assets/Discover.png'
-import Html from '../../assets/Html.png'
-import Css from '../../assets/Css.svg'
-import JavaScript from '../../assets/javascript.svg'
-import Ignite from '../../assets/Ignite.png'
-import ReactJs from '../../assets/React.Js.png'
-import ReactNative from '../../assets/ReactNative.png'
-import NodeJs from '../../assets/NodeJs.png'
-import TypeScript from '../../assets/Typescript.png'
-import Styled from '../../assets/styled.png'
-import Next from '../../assets/NextJs.png'
-import Vite from '../../assets/Vite.svg'
-import Git from '../../assets/GitHub-transformed.png'
-import Kedin from '../../assets/Linkedin.png'
-import Insta from '../../assets/Instagram.png'
+} from "./styles";
+import React, { useState, useEffect } from "react";
+import Academia from "../../assets/FotoAcademia.jpg";
+import Bone from "../../assets/Bone.png";
+import Sorriso from "../../assets/Sorriso.png";
+import Estacio from "../../assets/EstacioLogo.png";
+import Discover from "../../assets/Discover.png";
+import Html from "../../assets/Html.png";
+import Css from "../../assets/Css.svg";
+import JavaScript from "../../assets/javascript.svg";
+import Ignite from "../../assets/Ignite.png";
+import ReactJs from "../../assets/React.Js.png";
+import ReactNative from "../../assets/ReactNative.png";
+import NodeJs from "../../assets/NodeJs.png";
+import TypeScript from "../../assets/Typescript.png";
+import Styled from "../../assets/styled.png";
+import Next from "../../assets/NextJs.png";
+import Vite from "../../assets/Vite.svg";
+import Git from "../../assets/GitHub-transformed.png";
+import Kedin from "../../assets/Linkedin.png";
+import Insta from "../../assets/Instagram.png";
 
-import MapLibreMap from '../Home/Components/Map/Map'
+import MapLibreMap from "../Home/Components/Map/Map";
 
-import { DashBoard } from '../Home/Components/Dashboard'
-import { ArrowRight, CaretLeft, CaretRight } from 'phosphor-react'
-import { Future } from '../Home/Components/Future'
-import { Music } from '../Home/Components/Music'
-import { ProjectDisplayPort } from '../Home/Components/ProjectDisplayPort'
-import { ProjectDisplayLP } from '../Home/Components/ProjectDisplayLP'
+import { DashBoard } from "../Home/Components/Dashboard";
+import { ArrowRight, CaretLeft, CaretRight } from "phosphor-react";
+import { Future } from "../Home/Components/Future";
+import { Music } from "../Home/Components/Music";
+import { ProjectDisplayPort } from "../Home/Components/ProjectDisplayPort";
+import { ProjectDisplayLP } from "../Home/Components/ProjectDisplayLP";
 
-import { ProjectDisplayCD } from './ProjectDisplayLP'
+import { ProjectDisplayCD } from "./ProjectDisplayLP";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 export function Projects() {
-  const [mouseX, setMouseX] = useState(0)
-  const [mouseY, setMouseY] = useState(0)
-  const [currentImage, setCurrentImage] = useState(Academia)
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
+  const [currentImage, setCurrentImage] = useState(Academia);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => {
         if (prevImage === Academia) {
-          return Bone
+          return Bone;
         } else if (prevImage === Bone) {
-          return Sorriso
+          return Sorriso;
         } else {
-          return Academia
+          return Academia;
         }
-      })
-    }, 12000)
+      });
+    }, 12000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
   const handleBackClick = () => {
     setCurrentImage((prevImage) => {
       if (prevImage === Academia) {
-        return Sorriso
+        return Sorriso;
       } else if (prevImage === Bone) {
-        return Academia
+        return Academia;
       } else {
-        return Bone
+        return Bone;
       }
-    })
-  }
+    });
+  };
 
   const handleForwardClick = () => {
     setCurrentImage((prevImage) => {
       if (prevImage === Academia) {
-        return Bone
+        return Bone;
       } else if (prevImage === Bone) {
-        return Sorriso
+        return Sorriso;
       } else {
-        return Academia
+        return Academia;
       }
-    })
-  }
+    });
+  };
   const handleMouseMove = (e: React.MouseEvent) => {
-    setMouseX(e.clientX)
-    setMouseY(e.clientY)
-  }
+    setMouseX(e.clientX);
+    setMouseY(e.clientY);
+  };
   return (
     <>
       <AngryGrid onMouseMove={handleMouseMove}>
@@ -127,8 +127,8 @@ export function Projects() {
           </WorkButton>
         </DivGrid0>
         <DivGrid1>
-          {' '}
-          <DashBoard />{' '}
+          {" "}
+          <DashBoard />{" "}
         </DivGrid1>
         <DivGrid2>
           <img src={currentImage} alt="" />
@@ -150,7 +150,7 @@ export function Projects() {
         </DivGrid2>
 
         <DivGrid3>
-          <MapLibreMap />{' '}
+          <MapLibreMap />{" "}
         </DivGrid3>
         <DivGrid4>
           <h1> Aprendizado</h1>
@@ -198,15 +198,15 @@ export function Projects() {
           <Future />
         </DivGrid5>
         <DivGrid6>
-          {' '}
+          {" "}
           <Music />
         </DivGrid6>
         <LinkDivGrid7 href="https://github.com/gabriel06089">
-          {' '}
+          {" "}
           <DivGrid7>
             <img src={Git} alt="" />
             <ArrowButton>
-              {' '}
+              {" "}
               <ArrowRight weight="bold" size={30} />
             </ArrowButton>
           </DivGrid7>
@@ -238,5 +238,5 @@ export function Projects() {
       </AngryGrid>
       <Container>{/* <GitHubCalendar username="gabriel06089" /> */}</Container>
     </>
-  )
+  );
 }

@@ -5,14 +5,14 @@ import {
   ContainerPort,
   ImgContainer,
   Title,
-} from './styles'
-import { Link } from 'react-router-dom'
-import Portfolio from '../../../../assets/Portfolio.png'
-import Type from '../../../../assets/Typescript.png'
-import CSS from '../../../../assets/Css.svg'
-import Styled from '../../../../assets/styled.png'
-import React from '../../../../assets/ReactLogoClean.png'
-import Vite from '../../../../assets/Vite.svg'
+} from "./styles";
+import { Link } from "react-router-dom";
+import Portfolio from "../../../../assets/Portfolio.png";
+import Type from "../../../../assets/Typescript.png";
+import CSS from "../../../../assets/Css.svg";
+import Styled from "../../../../assets/styled.png";
+import React from "../../../../assets/ReactLogoClean.png";
+import Vite from "../../../../assets/Vite.svg";
 export function ProjectDisplayPort() {
   return (
     <Container>
@@ -31,7 +31,7 @@ export function ProjectDisplayPort() {
         </ImgContainer>
       </ContainerName>
       <ContainerPort>
-        <a href="">
+        <a href="" target="_blank" rel="noopener noreferrer">
           <img src={Portfolio} alt="" />
         </a>
       </ContainerPort>
@@ -44,5 +44,5 @@ export function ProjectDisplayPort() {
         <p>Sobre o Projeto</p>
       </Link>
     </Container>
-  )
+  );
 }

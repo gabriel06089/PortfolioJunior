@@ -256,7 +256,7 @@ export const DivGrid2 = styled(GridBase)`
   img {
     display: block;
     position: absolute;
-    width: 18.5rem;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }

@@ -1,6 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+/* eslint-disable prettier/prettier */
+import styled, { keyframes } from "styled-components";
 interface PointIndexProps {
-  active?: boolean
+  active?: boolean;
 }
 
 export const Container = styled.div`
@@ -12,7 +13,7 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
   }
-`
+`;
 
 export const AngryGrid = styled.div`
   justify-content: center;
@@ -25,6 +26,7 @@ export const AngryGrid = styled.div`
   max-width: 100%;
   column-gap: 1.2rem;
   row-gap: 1.2rem;
+  position: relative;
 
   @media (max-width: 1024px) {
     transform: scale(80%);
@@ -125,17 +127,18 @@ export const AngryGrid = styled.div`
     max-width: 100%;
     padding-bottom: 5rem;
   }
-`
+`;
 const GridBase = styled.div`
   border-radius: 2rem;
-  background-color: ${(props) => props.theme['Secondary-Button']};
-  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  background-color: ${(props) => props.theme["Secondary-Button"]};
+
   width: 100%;
-`
+  overflow: visible; /* Adicione esta linha */
+`;
+
 export const DivGrid0 = styled(GridBase)`
   grid-row-start: 1;
   grid-column-start: 1;
-
   grid-row-end: 2;
   grid-column-end: 3;
 
@@ -144,6 +147,8 @@ export const DivGrid0 = styled(GridBase)`
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  position: relative;
+  /* overflow: hidden; */
 
   h1 {
     background-image: linear-gradient(
@@ -153,33 +158,34 @@ export const DivGrid0 = styled(GridBase)`
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     font-size: 4em;
   }
 
   span {
     font-size: 1.5em;
   }
+
   p {
     font-size: 0.8em;
     width: 60%;
     text-align: center;
   }
+
   @media (max-width: 425px) {
     grid-row-start: 1;
     grid-column-start: 1;
-
     grid-row-end: 2;
     grid-column-end: 3;
     height: 20rem;
   }
+
   @media (max-width: 690px) {
     grid-row-start: 1;
     grid-column-start: 1;
-
     grid-row-end: 2;
     grid-column-end: 3;
     height: 20rem;
+
     h1 {
       font-size: 4em;
     }
@@ -188,21 +194,67 @@ export const DivGrid0 = styled(GridBase)`
       font-size: 1.5em;
       margin-bottom: 12px;
     }
+
     p {
       font-size: 1em;
       width: 100%;
       text-align: center;
     }
   }
-`
+
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -2px; /* Ajustado aqui */
+    left: -2px; /* Ajustado aqui */
+    width: calc(100% + 2px); /* Ajustado aqui */
+    height: calc(100% + 2px); /* Ajustado aqui */
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      ${(props) => props.theme.UltraContrast},
+      ${(props) => props.theme.Contrast},
+      transparent
+    );
+    filter: blur(5px); /* Ajuste conforme necessário */
+    transition:
+      background 0.5s ease,
+      opacity 2s ease; /* Adicionado aqui */
+    z-index: -1; /* Adicionado aqui */
+    opacity: 0; /* Adicionado aqui */
+  }
+
+  &:hover:after {
+    opacity: 1; /* Adicionado aqui */
+  }
+`;
+
+export const BorderDiv = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      ${(props) => props.theme.UltraContrast},
+      ${(props) => props.theme.Contrast}
+    )
+    1;
+  pointer-events: none;
+  transition: clip-path 0.1s ease;
+  clip-path: inset(0 var(--x) 0 var(--y));
+`;
+
 export const WorkButton = styled.button`
   margin-top: 1rem;
 
   border-style: solid;
   background:
     linear-gradient(
-        ${(props) => props.theme['Secondary-Button']},
-        ${(props) => props.theme['Secondary-Button']}
+        ${(props) => props.theme["Secondary-Button"]},
+        ${(props) => props.theme["Secondary-Button"]}
       )
       padding-box,
     linear-gradient(
@@ -220,7 +272,7 @@ export const WorkButton = styled.button`
     transform: scale(1.02);
   }
   span {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-weight: bold;
     font-size: 1em;
     color: ${(props) => props.theme.Primary};
@@ -230,7 +282,7 @@ export const WorkButton = styled.button`
     border: 2.5px solid transparent;
     font-size: 1rem;
   }
-`
+`;
 
 export const DivGrid1 = styled(GridBase)`
   grid-row-start: 2;
@@ -250,11 +302,35 @@ export const DivGrid1 = styled(GridBase)`
     grid-column-end: 1;
     height: 40rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px; /* Ajustado aqui */
+    left: -5px; /* Ajustado aqui */
+    width: calc(100% + 10px); /* Ajustado aqui */
+    height: calc(100% + 10px); /* Ajustado aqui */
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px); /* Ajuste conforme necessário */
+    transition:
+      background 0.1s ease,
+      opacity 2s ease; /* Adicionado aqui */
+    z-index: -1; /* Adicionado aqui */
+    opacity: 0; /* Adicionado aqui */
+  }
+
+  &:hover:after {
+    opacity: 1; /* Adicionado aqui */
+  }
+`;
 export const ContainerAbsolute = styled.div`
   position: absolute;
   display: flex;
-`
+`;
 export const DivGrid2 = styled(GridBase)`
   grid-row-start: 1;
   grid-column-start: 3;
@@ -268,12 +344,13 @@ export const DivGrid2 = styled(GridBase)`
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: background-image 0.5s ease-in-out;
   img {
+    border-radius: 2rem;
     display: block;
     position: absolute;
-    width: 18.5rem;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -289,6 +366,30 @@ export const DivGrid2 = styled(GridBase)`
       height: 100%;
     }
   }
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px); /* Ajuste conforme necessário */
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
   @media (max-width: 425px) {
     grid-row-start: 2;
     grid-column-start: 1;
@@ -301,7 +402,7 @@ export const DivGrid2 = styled(GridBase)`
       height: 100%;
     }
   }
-`
+`;
 export const ContainerIndex = styled.div`
   display: flex;
   align-items: center;
@@ -311,7 +412,7 @@ export const ContainerIndex = styled.div`
   gap: 0.5rem;
   bottom: 1rem;
   transition: transform 0.5s ease-in-out;
-`
+`;
 export const SVG1 = styled.div`
   svg {
     color: white;
@@ -321,7 +422,7 @@ export const SVG1 = styled.div`
     bottom: 1.4rem;
     z-index: 99;
   }
-`
+`;
 export const SVG2 = styled.div`
   svg {
     color: white;
@@ -331,7 +432,7 @@ export const SVG2 = styled.div`
     bottom: 1.4rem;
     z-index: 99;
   }
-`
+`;
 export const ArrowPhotoButton1 = styled.button`
   height: 3rem;
   width: 3rem;
@@ -350,7 +451,7 @@ export const ArrowPhotoButton1 = styled.button`
     outline: 10px solid rgba(255, 255, 255, 0.5);
   }
   transition: all 0.5s;
-`
+`;
 export const ArrowPhotoButton2 = styled.button`
   height: 3rem;
   width: 3rem;
@@ -367,7 +468,7 @@ export const ArrowPhotoButton2 = styled.button`
     outline: 10px solid rgba(255, 255, 255, 0.5);
   }
   transition: all 0.5s;
-`
+`;
 export const PointIndex = styled.div<PointIndexProps>`
   height: 0.8rem;
   width: 0.8rem;
@@ -376,9 +477,9 @@ export const PointIndex = styled.div<PointIndexProps>`
   border-radius: 50%;
   z-index: 99;
   opacity: 0.8;
-  background-color: ${(props) => (props.active ? 'whitesmoke' : 'gray')};
+  background-color: ${(props) => (props.active ? "whitesmoke" : "gray")};
   margin-bottom: 1.5rem;
-`
+`;
 
 export const DivGrid3 = styled(GridBase)`
   grid-row-start: 2;
@@ -391,7 +492,7 @@ export const DivGrid3 = styled(GridBase)`
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 33px;
     height: 33px;
@@ -406,7 +507,7 @@ export const DivGrid3 = styled(GridBase)`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -436,13 +537,37 @@ export const DivGrid3 = styled(GridBase)`
     grid-column-end: 3;
     height: 20rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px; /* Ajustado aqui */
+    left: -5px; /* Ajustado aqui */
+    width: calc(100% + 10px); /* Ajustado aqui */
+    height: calc(100% + 10px); /* Ajustado aqui */
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px); /* Ajuste conforme necessário */
+    transition:
+      background 0.1s ease,
+      opacity 2s ease; /* Adicionado aqui */
+    z-index: -1; /* Adicionado aqui */
+    opacity: 0; /* Adicionado aqui */
+  }
+
+  &:hover:after {
+    opacity: 1; /* Adicionado aqui */
+  }
+`;
 export const Square = styled.div`
   position: absolute;
   width: 50px;
   height: 50px;
   background-color: red;
-`
+`;
 export const DivGrid4 = styled(GridBase)`
   grid-row-start: 1;
   grid-column-start: 4;
@@ -453,6 +578,7 @@ export const DivGrid4 = styled(GridBase)`
   flex-direction: column;
   justify-content: center;
   padding: 1rem 2rem;
+  position: relative; /* Adicionado para garantir posicionamento relativo */
   h1 {
     align-self: center;
     margin-bottom: 1rem;
@@ -477,7 +603,31 @@ export const DivGrid4 = styled(GridBase)`
     grid-column-end: 2;
     height: 40rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 export const LearningContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -490,7 +640,7 @@ export const LearningContainer = styled.div`
     width: 2.1rem;
     margin-right: 0.5rem;
   }
-`
+`;
 export const Line = styled.div`
   width: 100%;
   height: 2px;
@@ -499,7 +649,7 @@ export const Line = styled.div`
   border-radius: 20px;
   bottom: 0;
   margin: 0.5rem 0;
-`
+`;
 export const LogoContainers = styled.div`
   display: flex;
   flex-direction: row;
@@ -510,13 +660,14 @@ export const LogoContainers = styled.div`
     width: 2rem;
     margin-right: 0.5rem;
   }
-`
+`;
 export const DivGrid5 = styled(GridBase)`
   grid-row-start: 3;
   grid-column-start: 2;
 
   grid-row-end: 4;
   grid-column-end: 3;
+  position: relative;
   @media (max-width: 690px) {
     grid-row-start: 2;
     grid-column-start: 2;
@@ -531,7 +682,31 @@ export const DivGrid5 = styled(GridBase)`
     grid-row-end: 2;
     grid-column-end: 2;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid6 = styled(GridBase)`
   grid-row-start: 3;
@@ -539,6 +714,7 @@ export const DivGrid6 = styled(GridBase)`
 
   grid-row-end: 4;
   grid-column-end: 5;
+  position: relative; /* Adicionado para garantir posicionamento relativo */
   @media (max-width: 690px) {
     grid-row-start: 4;
     grid-column-start: 1;
@@ -553,7 +729,31 @@ export const DivGrid6 = styled(GridBase)`
     grid-row-end: 4;
     grid-column-end: 3;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid7 = styled(GridBase)`
   grid-row-start: 4;
@@ -574,13 +774,38 @@ export const DivGrid7 = styled(GridBase)`
     height: 7rem;
     width: 7rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 export const LinkDivGrid7 = styled.a`
   grid-row-start: 4;
   grid-column-start: 1;
 
   grid-row-end: 5;
   grid-column-end: 3;
+  position: relative;
   @media (max-width: 690px) {
     grid-row-start: 5;
     grid-column-start: 2;
@@ -597,7 +822,31 @@ export const LinkDivGrid7 = styled.a`
     grid-column-end: 2;
     height: 20rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid8 = styled(GridBase)`
   grid-row-start: 4;
@@ -605,6 +854,7 @@ export const DivGrid8 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 4;
+  position: relative;
   @media (max-width: 690px) {
     grid-row-start: 8;
     grid-column-start: 1;
@@ -621,7 +871,31 @@ export const DivGrid8 = styled(GridBase)`
     grid-column-end: 1;
     height: 40rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid9 = styled(GridBase)`
   grid-row-start: 4;
@@ -629,6 +903,7 @@ export const DivGrid9 = styled(GridBase)`
 
   grid-row-end: 6;
   grid-column-end: 5;
+  position: relative;
   @media (max-width: 690px) {
     grid-row-start: 8;
     grid-column-start: 2;
@@ -645,7 +920,31 @@ export const DivGrid9 = styled(GridBase)`
     grid-column-end: 2;
     height: 40rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid10 = styled(GridBase)`
   grid-row-start: 5;
@@ -674,7 +973,31 @@ export const DivGrid10 = styled(GridBase)`
     color: white;
     z-index: 99;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 export const LinkGrid10 = styled.a`
   grid-row-start: 5;
   grid-column-start: 1;
@@ -697,7 +1020,31 @@ export const LinkGrid10 = styled.a`
     grid-column-end: 1;
     height: 20rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const DivGrid11 = styled(GridBase)`
   grid-row-start: 5;
@@ -732,7 +1079,31 @@ export const DivGrid11 = styled(GridBase)`
     color: white;
     z-index: 99;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 export const LinkGrid11 = styled.a`
   grid-row-start: 5;
   grid-column-start: 2;
@@ -755,7 +1126,31 @@ export const LinkGrid11 = styled.a`
     grid-column-end: 3;
     height: 20rem;
   }
-`
+  &:after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      white,
+      transparent
+    );
+    filter: blur(5px);
+    transition:
+      background 0.1s ease,
+      opacity 2s ease;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
 export const ArrowButton = styled.button`
   border-radius: 100%;
@@ -780,7 +1175,7 @@ export const ArrowButton = styled.button`
     outline: 10px solid rgba(255, 255, 255, 0.5);
   }
   transition: all 0.5s;
-`
+`;
 export const ArrowGray = styled(ArrowButton)`
   background-color: #000000;
   opacity: 0.2;
@@ -792,4 +1187,4 @@ export const ArrowGray = styled(ArrowButton)`
     outline: 10px solid rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
   }
-`
+`;
